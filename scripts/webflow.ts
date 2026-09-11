@@ -257,7 +257,11 @@ async function importSite(commit: boolean, overwrite: boolean) {
   const media = async (url: string, alt: string): Promise<number | null> => {
     if (!url) return null
     const filename = fileOf(url)
-    const { docs } = await payload.find({ collection: 'media', where: { filename: { equals: filename } }, limit: 1 })
+    // Webflow names start with a unique 24-hex asset id. Payload may suffix uploads ("-1") when a name
+    // clashes (it also checks the local media/ dir), so match on the id, not the exact filename.
+    const assetId = filename.match(/^[0-9a-f]{24}(?=_)/)?.[0]
+    const where = assetId ? { filename: { like: `${assetId}_` } } : { filename: { equals: filename } }
+    const { docs } = await payload.find({ collection: 'media', where, limit: 1 })
     if (docs[0]) return docs[0].id
     log.push(`+ media ${filename}`)
     if (!commit) return null

@@ -13,6 +13,8 @@ const nextConfig: NextConfig = {
         pathname: '/api/media/file/**',
       },
     ],
+    // Media served straight from the Vercel Blob CDN (see src/lib/blobStorage.ts)
+    remotePatterns: [{ protocol: 'https', hostname: '*.public.blob.vercel-storage.com' }],
   },
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {

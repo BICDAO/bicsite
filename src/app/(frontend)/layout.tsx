@@ -29,11 +29,17 @@ const creato = localFont({
 
 const NAME = 'Bureau of Internet Culture'
 
+// Explicit URL, else Vercel's production domain, else local dev.
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL && `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`) ||
+  'http://localhost:3000'
+
 export async function generateMetadata(): Promise<Metadata> {
   const site = await getSite()
   const og = rel(site.ogImage)?.url
   return {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+    metadataBase: new URL(SITE_URL),
     title: { default: NAME, template: `%s — ${NAME}` },
     description: site.description,
     openGraph: { title: NAME, description: site.description ?? undefined, type: 'website', images: og ? [og] : undefined },

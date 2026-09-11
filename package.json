@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "ci": "DATABASE_URL=${DIRECT_URL:-$DATABASE_URL} payload migrate && pnpm build",
+    "ci": "if [ \"$VERCEL_ENV\" != preview ]; then DATABASE_URL=${DIRECT_URL:-$DATABASE_URL} payload migrate; fi && pnpm build",
     "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=8000\" next build",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
     "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
@@ -21,10 +21,11 @@
   "dependencies": {
     "@payloadcms/db-postgres": "3.89.0",
     "@payloadcms/next": "3.89.0",
+    "@payloadcms/plugin-cloud-storage": "3.89.0",
     "@payloadcms/richtext-lexical": "3.89.0",
-    "@payloadcms/storage-vercel-blob": "3.89.0",
     "@payloadcms/ui": "3.89.0",
     "@tanstack/react-query": "^5.102.8",
+    "@vercel/blob": "2.8.0",
     "@walletconnect/universal-provider": "2.24.0",
     "cross-env": "^7.0.3",
     "dotenv": "16.4.7",
