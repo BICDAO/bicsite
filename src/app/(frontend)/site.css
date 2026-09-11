@@ -1,0 +1,265 @@
+/* Replica interactions — replaces Webflow IX2 (values taken from the site's IX2 data). */
+:root {
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Webflow head embed */
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  height: auto;
+}
+
+/* Scroll-into-view presets: slideInBottom / growIn / growBigIn (1s outQuart, per-element delay) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(100px);
+  transition:
+    opacity 1s var(--ease-out-quart) var(--d, 0ms),
+    transform 1s var(--ease-out-quart) var(--d, 0ms);
+}
+[data-reveal='grow'] {
+  transform: scale(0.75);
+}
+[data-reveal='grow-big'] {
+  transform: scale(0);
+}
+[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Header cards: two copies of each row slide one full width every 20s */
+.collection-list-wrapper-header-one {
+  animation: marquee-left 20s linear infinite;
+}
+.collection-list-wrapper-header-two {
+  animation: marquee-right 20s linear infinite;
+}
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* Arrow links: underline grows, arrow swaps */
+.hero-link-white-line {
+  width: 0;
+  transition: width 0.4s ease;
+}
+.hero-single-link-wrap:hover .hero-link-white-line {
+  width: 100%;
+}
+.hero-link-icon {
+  transition: transform 0.4s ease;
+}
+.hero-single-link-wrap:hover .hero-link-icon {
+  transform: translateX(170%);
+}
+
+.footer-social-link {
+  transition: color 0.4s ease;
+}
+.footer-social-link:hover {
+  color: var(--white);
+}
+.footer-social-link:hover .hero-link-icon {
+  transform: translateX(150%);
+}
+
+.secondary-btn-line {
+  width: 100%;
+  transition: width 0.4s ease;
+}
+.secondary-button:hover .secondary-btn-line {
+  width: 0;
+}
+
+/* Webflow's srcset `sizes` set this unstyled image's display width */
+.about-image {
+  width: 940px;
+}
+@media screen and (max-width: 991px) {
+  .about-image {
+    width: 728px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .about-image {
+    width: 100%;
+  }
+}
+
+/* Treasury: hovering a row shows its thumbnail */
+.treasury-v1-single-warp:hover + .treasury-image-hover-container {
+  display: block;
+}
+
+/* Manifesto accordion */
+.awards-v1-single-warp {
+  cursor: pointer;
+}
+.awards-v1-single-flex-wrap-dropdown {
+  height: 0;
+  transition: height 0.5s ease-in-out;
+}
+
+/* Rich text inherits the block it sits in */
+.blog-v1-paragraph strong {
+  color: var(--white);
+}
+.project-client-description {
+  white-space: pre-line;
+}
+
+/* Hamburger (was a Lottie) */
+.menu-button {
+  background: none;
+}
+.hamburger {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* middle line */
+  background: linear-gradient(var(--white), var(--white)) center / 60% 2px no-repeat;
+  transition: background-size 0.4s ease;
+}
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: var(--white);
+  transition: transform 0.4s ease, top 0.4s ease;
+}
+.hamburger::before {
+  top: calc(50% - 8px);
+}
+.hamburger::after {
+  top: calc(50% + 6px);
+}
+.menu-button[aria-expanded='true'] .hamburger {
+  background-size: 0 2px;
+}
+.menu-button[aria-expanded='true'] .hamburger::before,
+.menu-button[aria-expanded='true'] .hamburger::after {
+  top: calc(50% - 1px);
+}
+.menu-button[aria-expanded='true'] .hamburger::before {
+  transform: rotate(45deg);
+}
+.menu-button[aria-expanded='true'] .hamburger::after {
+  transform: rotate(-45deg);
+}
+
+/* Wallet connect (new — styled with the site's tokens) */
+.connect-link {
+  width: auto;
+  background: none;
+  padding: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.connect-signout {
+  background: none;
+  padding: 0 0 0 8px;
+  color: var(--gray-400);
+  font-size: inherit;
+  text-transform: uppercase;
+}
+.connect-signout:hover {
+  color: var(--white);
+}
+.connect-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background: rgb(0 0 0 / 0.8);
+}
+.connect-modal {
+  width: 100%;
+  max-width: 400px;
+  padding: 24px;
+  background: var(--black);
+  border: 1px solid var(--black-200);
+}
+.connect-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--black-200);
+}
+.connect-close {
+  background: none;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--white);
+}
+.connect-list {
+  display: flex;
+  flex-direction: column;
+}
+.connect-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  background: none;
+  border-bottom: 1px solid var(--black-200);
+  color: var(--white);
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: left;
+  transition: color 0.4s, padding-left 0.4s;
+}
+.connect-option:hover {
+  color: var(--gray-400);
+  padding-left: 10px;
+}
+.connect-option img {
+  width: 24px;
+  height: 24px;
+}
+.connect-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.connect-qr svg {
+  width: 100%;
+  height: auto;
+  background: var(--white);
+  padding: 12px;
+}
+.connect-status {
+  margin-top: 16px;
+  color: var(--gray-400);
+  text-transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .collection-list-wrapper-header-one,
+  .collection-list-wrapper-header-two {
+    animation: none;
+  }
+}

@@ -1,0 +1,975 @@
+{
+  "source": "https://www.bureauofinternetculture.art",
+  "fetchedAt": "2026-09-11T06:05:56.928Z",
+  "memes": [
+    {
+      "slug": "harambe",
+      "name": "Harambe",
+      "creator": "Jeff McCurry",
+      "dateAcquired": "2022-12-20",
+      "isMemeNft": true,
+      "isToken": true,
+      "isPhysical": true,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/harambe-the-gorilla",
+      "provenanceUrl": "https://opensea.io/collection/harambe-legends",
+      "description": "In May 2016, a child fell into the gorilla enclosure at the Cincinnati zoo. Zookeepers were afraid that Harambe the gorilla would harm the child, so they shot and killed Harambe. Most all of the pictures of Harambe used to report this event were taken by Jeff McCurry, a photographer who had known Harambe for many years. Despite widespread coverage, Jeff saw little compensation for his work. By minting the most famous images, and then a series of NFTs of lesser known images, Jeff has helped raise money for gorilla charities at a level that otherwise would not have been possible. BIC Dao has collected several pieces from Jeffs Harambe Legends Collection.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6828dcfe292840b5a7f20ed0_harambe.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852b128862f9ff11db7095e_Mask%20group-11.png",
+      "sortOrder": 0
+    },
+    {
+      "slug": "awkward-white-people-smile",
+      "name": "Awkward White People Smile",
+      "creator": "David Vujanic",
+      "dateAcquired": "2024-04-16",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/awkward-white-people-smile",
+      "provenanceUrl": "https://foundation.app/mint/eth/0x16e4195f8548CA2647fa607247096f5779F07dBF/1",
+      "description": "A childhood photo of footballer David Vujanic features the infamous smile that has been used across the internet for years as a reaction to awkward situations. It was sold by David as an NFT for approximately $12,000 in April 2024 to BIC DAO.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6828dd8286b6d8d4cd19d378_tight%20lipped%20smile.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852b133c254b34640150142_Mask%20group-7.png",
+      "sortOrder": 1
+    },
+    {
+      "slug": "keyboard-cat",
+      "name": "Keyboard Cat",
+      "creator": "Charlie Schmidt",
+      "dateAcquired": "2024-06-04",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/keyboard-cat",
+      "provenanceUrl": "https://foundation.app/mint/eth/0x3B3ee1931Dc30C1957379FAc9aba94D1C48a5405/5553",
+      "description": "Filmed on Betacam in 1984 by meme pioneer Charlie Schmidt, “Keyboard Cat” went on to star in global ad campaigns, inspire a Green Day cover, and even headline the 2014 Puppy Bowl halftime show. The piece became part of BIC DAO’s holdings on June 4, 2024, when it was secured for 36 ETH.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852af04a021b9b6b33737a1_keyboard%20cat.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852b17db650db7240779421_Mask%20group-9.png",
+      "sortOrder": 2
+    },
+    {
+      "slug": "oh-no-its-retarded",
+      "name": "Oh no it's retarded",
+      "creator": "@aaaaa42c",
+      "dateAcquired": "2024-10-28",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/oh-no-its-retarded",
+      "provenanceUrl": "https://foundation.app/mint/eth/0x8C4882366b238899a0Ae6088385C0472CBe6c7BD/1",
+      "description": "The original Oh No, It's Retarded comic was posted by Tumblr user aaaaa42c on December 27th, 2014, featuring a stick figure reacting to a dog making an unsettling comment about cancerous cells. Its simplicity and dark punchline quickly inspired a wave of exploitable edits across Tumblr, Reddit, 4chan, and FunnyJunk—solidifying it as a staple of edgy, MS Paint-style internet humor and cementing its place in the early 2010s rage comic legacy. This is another DAO acquisition facilitated by our Provenance Agent, Giancarlo Chaux, who engaged with the creator to auction the piece on the open market. The DAO won the auction for 3 ETH.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685947c4939af4e17ec9970b_oh%20no%20its%20retarded.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6859482207d91bfe71a058d2_Mask%20group-15.jpg",
+      "sortOrder": 3
+    },
+    {
+      "slug": "me-gusta",
+      "name": "Me Gusta",
+      "creator": "May Oswald",
+      "dateAcquired": "2024-11-22",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/me-gusta",
+      "provenanceUrl": "https://foundation.app/mint/eth/0xc32972F47Ed3348EeCcE472acA374e1D91cbd652/1",
+      "description": "The original Me Gusta face was created by May Oswald and first posted to 4chan and Reddit on March 18th, 2010, as part of a deliberate effort to introduce a new Rage Comic character. It quickly became a viral expression of awkward, creepy, or oddly satisfying pleasure, and helped define the surreal humor of early 2010s internet culture. This acquisition was facilitated by Giancarlo Chaux, one of the Provenance Agents of the DAO. BIC won the auction at just over $70,000.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852aeed0e183ab83003874b_me%20gusta%20face.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852b1763343701503d4fcba_Mask%20group-5.png",
+      "sortOrder": 4
+    },
+    {
+      "slug": "shareholder-value",
+      "name": "Shareholder Value",
+      "creator": "Tom Toro",
+      "dateAcquired": "2024-08-16",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://highlight.xyz/mint/66b645a786d7ad5b142ac673",
+      "provenanceUrl": "https://highlight.xyz/mint/66b645a786d7ad5b142ac673",
+      "description": "Created by renowned artist Tom Toro, “Yes, the Planet Got Destroyed” is a cartoon portraying a post-apocalyptic world ruined by corporate greed. First published in The New Yorker on November 26, 2012, the image quickly became a world-famous internet meme. More than a decade later, it continues to be reshared in a variety of contexts. The Bureau of Internet Culture (BIC) acquired the piece for 10 ETH on August 16, 2024.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685949506da09302b64df80a_shareholder%20value.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6859494842018705317afe29_Mask%20group-17.png",
+      "sortOrder": 5
+    },
+    {
+      "slug": "sminem",
+      "name": "Sminem",
+      "creator": "Sminem",
+      "dateAcquired": "2022-05-03",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/sminem",
+      "provenanceUrl": "https://foundation.app/mint/eth/0x1932DD836665251ca0EFc62Aa02627AC629aA7c6/1",
+      "description": "Sminem is character based on photograph of Russian teenager Roman Zuev wearing a knockoff shirt with the rapper Eminem on it, with \"Eminem\" misspelled \"Sminem.\" In 2018, Sminem became extraordinarily popular as a meme in cryptocurrency as he featured often in Bizonacci videos, which showed him combatting negative market forces. Roman auctioned off many of his famous images as NFTs, and even created his own memecoin, $OGSM. He has been able to monetize his online popularity in a way never previously possible, and serves as a joyous icon worldwide even in times of conflict.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6828dd3d764ff294e47b7714_sminem.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852b1a110004e24725b85ea_Mask%20group-13.png",
+      "sortOrder": 6
+    },
+    {
+      "slug": "unimpressed-nightclub-girl",
+      "name": "Unimpressed Nightclub Girl",
+      "creator": "David Wilkinson",
+      "dateAcquired": "2024-04-25",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/milk-edinburgh-club-photo",
+      "provenanceUrl": "https://foundation.app/mint/eth/0x1547FFb18fcC241a70540EeF2C495A71c8336470/1",
+      "description": "Often used to mock unsolicited explanations, this image was taken at Milk nightclub in Edinburgh, and first posted on Facebook on Sep 19th, 2018. It quickly became a viral meme format for painfully relatable one-sided conversations, especially the kind where someone won’t stop explaining something no one asked about — solidifying its place as a modern classic in internet cringe humor. The image was sold to BIC DAO as an NFT by photographer David Wilkinson for approximately $48,000.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852aecfb1d9032e04a7c160_club%20explaining.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852b1695f6d7f7c1e7bf30f_Mask%20group-4.png",
+      "sortOrder": 7
+    },
+    {
+      "slug": "feisty-doge",
+      "name": "Feisty Doge",
+      "creator": "Atsuko Sato",
+      "dateAcquired": "2021-08-19",
+      "isMemeNft": true,
+      "isToken": true,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://x.com/Cryptopathic/status/1618612057758380035",
+      "provenanceUrl": "https://very-auction.vercel.app/",
+      "description": "Feisty Doge is one of the images minted by Atsuko Sato as part of her 2021 auction, along with 7 others, including the most famous doge image. This image was fractionalized into a token, $NFD, which means it can be owned by multiple people. If someone wished to, they could buy enough of the tokens on the market to redeem the original image. The community of token holders that has formed around this is the BIC! We are a collective of collectors who love memes and wish to protect their stories using the blockchain. This is done by having the creator of a meme mint an NFT of it - creating a digital object with their signature. This object can be auctioned off, allowing them to monetize their content in a way that has never previously been possible. It also allows us to steward the provenance of this story in a permanent and decentralized way - preserving internet history for the future.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6828dcbed8c30949b2bc3c44_feisty%20doge.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852b1c8c9596e9deb6b7a8b_Mask%20group-14.png",
+      "sortOrder": 8
+    },
+    {
+      "slug": "myanmar-coup-dance",
+      "name": "Myanmar Coup Dance",
+      "creator": "Khing Hnin Wai",
+      "dateAcquired": "2024-04-18",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/myanmar-coup-dance-instructor-videos",
+      "provenanceUrl": "https://foundation.app/mint/eth/0x3B3ee1931Dc30C1957379FAc9aba94D1C48a5405/96863",
+      "description": "This iconic video went viral in February 2021 video, as it shows Myanmar fitness instructor Khing Hnin Wai leading an exercise class to \"Ampun Bang Jago\" as a military convoy passes behind her, inspiring widespread memes and remixes highlighting the surreal contrast between calm and chaos. This piece of cultural history was acquired with the help of Lil Dojo, a long standing member of the BIC DAO.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6828dce45e374f01d84d6d02_myanmar.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852b1aa9320256e2ebe16fe_Mask%20group-10.png",
+      "sortOrder": 9
+    },
+    {
+      "slug": "gigachad",
+      "name": "Gigachad",
+      "creator": "Krista Sudmalis",
+      "dateAcquired": "2022-05-06",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/gigachad",
+      "provenanceUrl": "https://opensea.io/item/ethereum/0x5bb137ba6dcf1c4d8ad2d09ec4617eb33b77fa33/54",
+      "description": "\"Gigachad\" is the name given to a man featured in a series of images created by Krista Sudmalis as part of her Sleek'N'Tears project. These images are very well known and went viral as an image representing a show of strength or corageous rejection of the norm. The man in the photo is not real - Krista manipulated the appearance of one of her models to create his face. Whether or not he was real was largely debated online, and Krista played into this by creating an account for the character on instagram where he appeared in many alternative photos as a real human being. This iconic piece joined the BIC DAO’s collection on May 6, 2022, following a purchase of 20 ETH.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6828dc93b9374004c61e4014_gigachad.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852b1ce93f943fa6f7834b5_Mask%20group-2.png",
+      "sortOrder": 10
+    },
+    {
+      "slug": "huh-cat",
+      "name": "Huh Cat",
+      "creator": "@planetvenus500 on TikTok",
+      "dateAcquired": "2024-04-21",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/huh-cat",
+      "provenanceUrl": "https://foundation.app/mint/eth/0x97FE8701793639022ddE8bdACA4c23230DA67349/1",
+      "description": "The “huh? cat” (A.K.A. Ben Cat,) is a pet cat owned by TikToker @planetvenus500 who originally posted the video in September 2021 without much attention. In February 2023 the video was reposted and went viral - with 2 million plays and 300k likes in under two months. Today, the huh-cat meme is a part of internet culture. BIC DAO has won the auction for the 1/1 Video NFT in april 2024 for just under $16,000.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6828dd5a5e374f01d84da736_huh%20cat.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c22580086d6b12fcc9292_6852b163612895c12f6953e1_Mask%20group-12.png",
+      "sortOrder": 11
+    },
+    {
+      "slug": "caroline-ellison-testifying-from-witness-box",
+      "name": "Caroline Ellison testifying from witness box",
+      "creator": "Jane Rosenberg",
+      "dateAcquired": "2025-01-28",
+      "isMemeNft": false,
+      "isToken": false,
+      "isPhysical": true,
+      "knowYourMemeUrl": "",
+      "provenanceUrl": "",
+      "description": "The original courtroom sketches from the Sam Bankman-Fried’s trials.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c1efc2431873e02bb14bf_sbf2.avif",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c4700939e77cb69a72e59_Mask%20group-18.png",
+      "sortOrder": 12
+    },
+    {
+      "slug": "mother-ignoring-kid-drowning-in-a-pool",
+      "name": "Mother Ignoring Kid Drowning In A Pool",
+      "creator": "The Lepp family",
+      "dateAcquired": "2024-03-21",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/mother-ignoring-kid-drowning-in-a-pool",
+      "provenanceUrl": "https://foundation.app/mint/eth/0x3B3ee1931Dc30C1957379FAc9aba94D1C48a5405/71097",
+      "description": "Acquired by BIC DAO for 10 ETH on March 21 2024, Gary Lepp’s photo—shot during a 1989 family vacation in Venice, FL, and depicting daughter Kaitlin leaping toward mother Tami while sister Amanda struggles to stay afloat—began as a family inside joke, resurfaced on Facebook’s Siblings Day in 2016, and ultimately went viral on Reddit as the “Mother Ignoring Kid Drowning in a Pool” meme.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685aa298e22ed012ae043457_Mother-ignoring-kid-drowning-in-a-pool%20Large.jpeg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685cbf7a27cef1c656587904_Mother-ignoring-kid-thumb.jpg",
+      "sortOrder": 13
+    },
+    {
+      "slug": "jumping-on-a-rake",
+      "name": "Jumping on a rake",
+      "creator": "Anton Gudim",
+      "dateAcquired": "2024-06-04",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/stepping-vs-jumping-on-a-rake",
+      "provenanceUrl": "https://foundation.app/mint/eth/0x3B3ee1931Dc30C1957379FAc9aba94D1C48a5405/13239",
+      "description": "2024 Jumping on a Rake was created in 2018 by Anton Gudim and later given template status on Imgur. This iconic meme shows someone foolishly attempting a skateboard trick down a flight of stairs on a rake, only to step on it in the end and proving the inevitable. Added to BIC DAO’s vault for 1 ETH on June 4,",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685aa5356be627c822e578e2_Stepping-vs-jumping-on-a-rake.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685cbf6ca5245393d1f6d120_Jumping-on-a-rake-thumb.jpg",
+      "sortOrder": 14
+    },
+    {
+      "slug": "twinkie-doge",
+      "name": "Twinkie Doge",
+      "creator": "Ryan Hell",
+      "dateAcquired": "2024-03-02",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "",
+      "provenanceUrl": "https://zora.co/collect/eth:0xabefbc9fd2f806065b4f3c237d4b59d9a97bcac7/4833",
+      "description": "Created by artist Ryan Hell in May 2013, “Twinkie Doge” is one of the first Doge derivatives and has earned a spot on Exodus’s “10 Most Iconic Doge Memes” list. Acquired by BIC DAO in March of 2024 for 6 ETH.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685aa6006d959b69b910f913_Twinkie-Doge.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685cbf609d1eb1533353f64f_twinkie-doge-thumb.jpg",
+      "sortOrder": 15
+    },
+    {
+      "slug": "trojan-horse",
+      "name": "Trojan Horse",
+      "creator": "Martin Kozlowski",
+      "dateAcquired": "2025-01-28",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/trojan-horse-object-labels",
+      "provenanceUrl": "https://foundation.app/mint/eth/0xb6A70E1e80cB3002FAB7025A70d2a296b69c30dB/1",
+      "description": "Trojan Horse is a 2015 meme that later spawned countless global spin-offs, Mark Zuckerberg drags a Trojan horse labeled “Facebook” toward a castle marked “Washington Post,” illustrating fears of the platform’s stealthy influence over traditional media. Acquired by BIC DAO on January 28, 2025 for 5 ETH.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685aa6e8c936c7c481a1dfb5_Trojan-Horse.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685cbf53be8acdbc201e2dd5_Trojan-horse-thumb.jpg",
+      "sortOrder": 16
+    },
+    {
+      "slug": "baton-roue",
+      "name": "Baton Roue",
+      "creator": "Corentin Penloup",
+      "dateAcquired": "2024-10-13",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/baton-roue",
+      "provenanceUrl": "https://foundation.app/mint/eth/0x8aE128EC8588A208FBcB8Bfb03F58D7F6b3e3478/1",
+      "description": "Bought by BIC Oct 13, 2024 via auction, he original comic, titled \"Baton Roue\" (French for “wheel stick”), was first published on Corentin Penloup’s personal art blog on January 23rd, 2011. It became an iconic meme format symbolizing self-sabotage and misplaced blame, widely used in political and cultural commentary across the internet. One of the proud acquisitions of the DAO at an auction that was facilitated by Artnerra.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685aa79c91919b2c0de8ba46_Baton-Roue.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685cbf422653a69a5bc9c9b9_BatonRoue-thumb.jpg",
+      "sortOrder": 17
+    },
+    {
+      "slug": "the-silent-protector",
+      "name": "The silent protector",
+      "creator": "Utkal Gaurab",
+      "dateAcquired": "2024-11-29",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/the-silent-protector",
+      "provenanceUrl": "https://foundation.app/mint/eth/0xE7c6753CAFa5daB336544f2C5AfA2248775181b8/1",
+      "description": "The Silent Protector is an exploitable comic by artist Utkal Gaurab, originally shared in 2016. The image quickly became meme-ified, with labels humorously applied to the soldier (e.g., “PewDiePie”), the bombs (“Crippling loneliness”), and the child (e.g., “waifus”) to illustrate metaphorical protection. The meme gained traction on Reddit and 4chan and has since become a staple for expressing silent sacrifice or unseen struggle. Extremely popular in crypto circles, this meme was a proud acquisition by the Bureau with the help and facilitation by Artnerra.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685aa8ca60b229d8e44427a0_The-silent-protector.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685cbf2f27cef1c656584984_TheSilentProt-thumb.jpg",
+      "sortOrder": 18
+    },
+    {
+      "slug": "you-live-like-this",
+      "name": "You live like this?",
+      "creator": "___okay on Reddit.",
+      "dateAcquired": "2024-11-18",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/neckbeard-nest",
+      "provenanceUrl": "https://foundation.app/mint/eth/0x16a40bF85A08ccc0d8DC22610098C1ead0C71B1b/1",
+      "description": "This viral photo was taken on December 12, 2019 at Southern Illinois University. On December 17th, 2019, Redditor ___okay uploaded this image of a neckbeard nest actively in use, with four guys being in the messy room while playing Super Smash Brothers, causing many people to note the stereotype associated with Smash fans being perceived as correct, earning over 3,700 upvotes in three years. Acquired by bic dao in november 2024.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685aaa63d00381f971f2155a_You-live-like-this.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685cbf21a5245393d1f6b6af_YouLiveLIkeThs-thumb.jpg",
+      "sortOrder": 19
+    },
+    {
+      "slug": "popeyes-kid",
+      "name": "Popeyes Kid",
+      "creator": "Dieunerst Collin",
+      "dateAcquired": "2024-12-13",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/popeyes-kid-dieunerst-collin",
+      "provenanceUrl": "https://foundation.app/mint/eth/0xC42dCB16F332Ac56E7e75323710ba6650bFDB085/1",
+      "description": "“Popeyes Kid,” a 2013 viral Vine featuring young Dieunerst Collin giving a side-eye in a Popeyes restaurant, went viral ultimately leading to Collin receiving a celebrated NIL deal from Popeyes in January 2023. BIC DAO acquired this piece on December 13, 2024 for 10 eth.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685aaecdc936c7c481a8d3ac_Popeyes-Kid-Thumbnail.png",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685cbf1327cef1c656582dc6_PopeyesKid-thumb.jpg",
+      "sortOrder": 20
+    },
+    {
+      "slug": "draw-25",
+      "name": "Draw 25",
+      "creator": "Damien Jones",
+      "dateAcquired": "2024-12-16",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/draw-25",
+      "provenanceUrl": "https://foundation.app/mint/eth/0x64C89feFe07666ca9Ec1f012C53d8D8AF0244a4C/1",
+      "description": "“Draw 25” blew up in January 2020 when Facebook user Damien Jones tweaked the Uno wild-card meme to read “Call/text your recent ex or draw 25,” captioned it “Say no more,” and launched it into global fame. BIC DAO won the auction on December 16, 2024 for 5 ETH.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685ab04bc936c7c481aa7eca_Draw-25.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685cbefc4b7cf1254a144a52_Draw-25-Thumb.jpg",
+      "sortOrder": 21
+    },
+    {
+      "slug": "sam-bankman-fried-looking-back-from-defense-table",
+      "name": "Sam Bankman-Fried looking back from defense table",
+      "creator": "Jane Rosenberg",
+      "dateAcquired": "2025-01-28",
+      "isMemeNft": false,
+      "isToken": false,
+      "isPhysical": true,
+      "knowYourMemeUrl": "",
+      "provenanceUrl": "",
+      "description": "The original courtroom sketches from the Sam Bankman-Fried’s trials",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c1d3689b996ee3f515445_sbf1.avif",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685cbee6ddd8589a6ec02223_Sam-Bankman-thumb.jpg",
+      "sortOrder": 22
+    },
+    {
+      "slug": "tornado-selfie",
+      "name": "Tornado Selfie",
+      "creator": "Riot Company",
+      "dateAcquired": "2025-06-27",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/tornado-selfie-here-it-comes",
+      "provenanceUrl": "",
+      "description": "The Tornado Selfie meme refers to a viral image of a man casually taking a selfie with a massive tornado in the background. The photo exploded on social media due to the surreal contrast between the man's calm, almost nonchalant expression and the obvious danger just behind him.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685f176f1be16950bfeb8ae8_Tornado%20Selfie%202.avif",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685f17bc94c33b27eb68944c_Tornado%20Selfie%20copy.png",
+      "sortOrder": 23
+    },
+    {
+      "slug": "laughing-guy-its-totally-okay-to-let-your-goofy-side-shine-through",
+      "name": "Laughing Guy (It's Totally Okay To Let Your Goofy Side Shine Through)",
+      "creator": "Justin Silva",
+      "dateAcquired": "2024-07-13",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://highlight.xyz/mint/ethereum:0x0964Fb2F563d94f9E5bD760D9114f25E72F8Dc39",
+      "provenanceUrl": "https://highlight.xyz/mint/ethereum:0x0964Fb2F563d94f9E5bD760D9114f25E72F8Dc39",
+      "description": "The Laughing Guy Feigning Suicide meme comes from a TikTok posted by @justinsilvajr after June 23, 2022. It parodied the It's Totally Okay To Let Your Goofy Side Shine Through trend by showing exaggerated fake suicide attempts — jumping off a balcony, drinking bleach, setting himself on fire — while smiling and laughing. Though the original video was deleted, reuploads quickly spread. The clip became a popular reaction meme on Twitter starting August 2021, used to caption moments of extreme but humorous overreaction. It gained wider traction in July 2022, especially after a viral tweet about actress Anya Taylor-Joy. Its dark humor and absurdity made it a lasting visual shorthand across social media. Acquired by BIC DAO",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6879f55bf042f4144f284642_Its-totally-okay-to-let-your-goofy-side-shine-through-THUMBNAIL.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6879f5c33a40bff25de42f32_Its-totally-ok-squareThumb.png",
+      "sortOrder": 24
+    },
+    {
+      "slug": "dancing-baby",
+      "name": "Dancing Baby",
+      "creator": "Unreal Pictures / Autodesk Inc.",
+      "dateAcquired": "2025-07-21",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/dancing-baby",
+      "provenanceUrl": "https://foundation.app/mint/eth/0xb1Fe48fDA65D0852bD4c76896E20c002C7dA0e43/7",
+      "description": "The Original Dancing Baby is one of the first viral videos in the history of the internet by the original creator team Michael Girard, Robert Lurye and John Chadwick. They produced a meme before the world actually knew what a meme is. Also known as Baby Cha-Cha and Oogachacka Baby, is a viral video of a 3D-rendered baby dancing to the intro of “Hooked on a Feeling” by the Swedish rock band Blue Swede. Widely cited as one of the earliest examples of an Internet phenomenon, the Dancing Baby became globally popular via e-mail chains in 1996. By owning the digitally restored loop by the original creators, we now own a part of internet history.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6880e9cada86e2704886ee20_Dancing-Baby.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6880e9cf4559064f54c4927f_Dancing-Baby-THUMB.jpg",
+      "sortOrder": 25
+    },
+    {
+      "slug": "crying-man-meme",
+      "name": "Crying Man Meme",
+      "creator": "Michael",
+      "dateAcquired": "2025-07-26",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/black-man-crying-thank-god-for-my-reefer",
+      "provenanceUrl": "https://foundation.app/mint/eth/0xaCCBD03ccA8A0f87920b6ea6F2aBA98C3a02C9e6/1",
+      "description": "The \"Crying Man Meme\" began circulating online around 2014 to 2015 and has become one of the most widely used reaction images to express emotional contradiction, capturing everything from heartbreak and sadness to genuine joy and vulnerability.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/68859b2670a0f58c8015982d_Crying-Man-Meme.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/68859b2ac53885cfc9dff12e_Crying-Man-Meme-THUMB.jpg",
+      "sortOrder": 26
+    },
+    {
+      "slug": "call-an-ambulance",
+      "name": "Call An Ambulance",
+      "creator": "Extreme Cowboy Fast Draw, Self Defense",
+      "dateAcquired": "2025-09-11",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/call-an-ambulance-but-not-for-me",
+      "provenanceUrl": "https://foundation.app/mint/eth/0x4D8E81620237d2C4210A53774b06d064482F1ec0/1",
+      "description": "“Call An Ambulance But Not For Me” is a meme that originated from a 2018 self-defense class ad showing an elderly man turning the tables on a mugger. It became popular in 2018–2020 as an image macro and video format symbolizing surprise role reversals, spreading widely across Reddit, Twitter, and gaming communities. Its value lies in its versatility, as it humorously captures the moment when an expected victim reveals unexpected power.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/68d4992e6f3e8b3e8ac13cad_Call-An-Ambulance.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/68d499333d244789ef7b4b03_Call-An-Ambulance%20THUMB.jpg",
+      "sortOrder": 27
+    },
+    {
+      "slug": "bert-is-evil",
+      "name": "Bert Is Evil #2",
+      "creator": "Dino Ignacio",
+      "dateAcquired": "2025-07-21",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/bert-is-evil",
+      "provenanceUrl": "https://foundation.app/mint/eth/0xDDe2509b0E4864Ab182c00589e6C5A2F7CD48e87/2",
+      "description": "\"Bert is Evil\" is a meme that became popular as a satirical website called 'Bert is Evil\" that featured Bert near historical tragedies or infamous figures such as Adolf Hitler, Osama bin Laden, and others. The meme reached unintentional global attention in 2001 when an image from the site was used showing Bert with Osama. As a result of the controversy, Dino Ignacio had to take the website down. \"Bert is Evil\" became one of the earliest examples of a meme reaching escape velocity to such an extent as to stir political discourse. BIC DAO acquired this artifact from the meme creator, Dino Ignacio, who minted it on its 25th anniversary.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6880e8084ecd1a7f43a37013_Bert-is-Evil.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6880e7069373204d9d8fb330_Bert-is-Evil-THUMB.jpg",
+      "sortOrder": 28
+    },
+    {
+      "slug": "kevin-pixelmon-3662",
+      "name": "Kevin (Pixelmon #3662)",
+      "creator": "Pixelmon",
+      "dateAcquired": "2024-04-18",
+      "isMemeNft": true,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "",
+      "provenanceUrl": "https://opensea.io/item/ethereum/0x32973908faee0bf825a343000fe412ebe56f802a/3662",
+      "description": "In the NFT summer of 2022, the relatively unknown project \"\"Pixelmon\"\" rode the hype to raise $70 Million. When the big reveal came, it shocked investors that the assets were far below expectations. But to onlookers, this was hilarious. One of the mons, a dopey zombie named Kevin, became the icon of the low-effort, high-reward grift that was plaguing the industry at this time.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/68859abac935a5f8de96a117_Kevin.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/68859abec13ef4a4cdc1f8a5_Kevin-THUMB.jpeg",
+      "sortOrder": 29
+    },
+    {
+      "slug": "foar-everywun-frum-boxxy",
+      "name": "FOAR EVERYWUN FRUM BOXXY",
+      "creator": "Catherine Wayne",
+      "dateAcquired": "2025-10-12",
+      "isMemeNft": false,
+      "isToken": false,
+      "isPhysical": false,
+      "knowYourMemeUrl": "https://knowyourmeme.com/memes/boxxy",
+      "provenanceUrl": "https://opensea.io/item/ethereum/0x3b3ee1931dc30c1957379fac9aba94d1c48a5405/35899",
+      "description": "Boxxy is the online pseudonym of Catherine Wayne. In 2009, this work was a catalyst to one of the first internet civil wars and breaking 4Chan, shutting down the site for hours via a DDOS attack.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/69149133561ca4484bc7b530_Boxxy.webp",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/69149133561ca4484bc7b530_Boxxy.webp",
+      "sortOrder": 30
+    }
+  ],
+  "liquidAssets": [
+    {
+      "slug": "unicorn-meat",
+      "name": "Unicorn Meat",
+      "ticker": "W🍖",
+      "creator": "Alex Van de Sande",
+      "blockchain": "Ethereum",
+      "coingeckoUrl": "https://www.coingecko.com/en/coins/unicorn-meat",
+      "description": "Unicorn Meat is a historic Ethereum meme token, created by Ethereum's Alex Van de Sande in March 2016 as part of a demonstration of token mutations, DAOs, bribable voting, and on-chain fun. A month after the Ethereum Foundation created Unicorns 🦄 as an offering in return for anyone who donated 2.014 ETH to the Ethereum Foundation Tip Jar, Alex devised what was conveyed as an April Fool's joke – a Unicorn Meat token and a Unicorn Meat Grinder Association contract allowing any Unicorn holder to grind their Unicorns for Unicorn Meat, as well as make proposals to change how the operation functioned.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/69148fed35d923ef8c7c410e_unicornmeat-logo.png",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/69148fed35d923ef8c7c410e_unicornmeat-logo.png",
+      "sortOrder": 0
+    },
+    {
+      "slug": "pweaseog",
+      "name": "PweaseOG",
+      "ticker": "$PweaseOG",
+      "creator": "711truther",
+      "blockchain": "Base",
+      "coingeckoUrl": "https://dexscreener.com/base/0xefb28475001c0c10d871dc12c45fce9286e83fa32bcb67be3a8d8be24e216865",
+      "description": "711truther's second edition of the OG Pwease meme",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/68886125298140a2184f9560_Pwease.jpeg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/68886125298140a2184f9560_Pwease.jpeg",
+      "sortOrder": 1
+    },
+    {
+      "slug": "og-babyface",
+      "name": "OG BABYFACE",
+      "ticker": "$OGBABYFACE",
+      "creator": "711truther",
+      "blockchain": "Base",
+      "coingeckoUrl": "https://dexscreener.com/base/0xf0c4c0aa0a4e1a2ea1313b89783c0dbd2c2d2223",
+      "description": "The original JD Vance BabyFace edit.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/688860a1a67375b092369124_OgBabyFace.jpeg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/688860a1a67375b092369124_OgBabyFace.jpeg",
+      "sortOrder": 2
+    },
+    {
+      "slug": "truck-0001",
+      "name": "TRUCK 0001",
+      "ticker": "$TRCK",
+      "creator": "Shl0ms",
+      "blockchain": "Base",
+      "coingeckoUrl": "https://www.dextools.io/app/en/base/pair-explorer/0x4eba54aea8a2c9cd00dc143fd10dae0011897d87?t=1753767416778",
+      "description": "The self driving on these things does not work. My husband is going to fucking kill me.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c0a531b82418a5097803a_TRCK.png",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c0a62c94047f062ec6c48_TRCK%20Small.jpeg",
+      "sortOrder": 3
+    },
+    {
+      "slug": "stonks",
+      "name": "STONKS",
+      "ticker": "$STNK",
+      "creator": "",
+      "blockchain": "Solana",
+      "coingeckoUrl": "https://www.coingecko.com/en/coins/stonks",
+      "description": "Stonks is an intentional misspelling of the word \"stocks\" which is often associated with a surreal meme featuring the character Meme Man standing in front of a picture representing the stock market followed by the caption \"Stonks.\" The picture began seeing use as a reaction image online in jokes about making poor financial decisions. In the 2020s, the term \"stonks\" has come to be used within the Meme Stocks community to describe humorous investing in various companies as a means to manipulate the market.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c1a032431873e02b7607b_601448566dfbe10018e00c5d.webp",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c1a032431873e02b7607b_601448566dfbe10018e00c5d.webp",
+      "sortOrder": 4
+    },
+    {
+      "slug": "success-kid",
+      "name": "Success Kid",
+      "ticker": "$SUCCESS",
+      "creator": "Laney Griner",
+      "blockchain": "Ethereum",
+      "coingeckoUrl": "",
+      "description": "Success Kid, sometimes known as I Hate Sandcastles, is a reaction image of a baby at a beach with a smug facial expression. It has been used in image macros to designate either success or frustration. In early 2011, the original image was turned into an advice animal style image macro with captions describing a situation that goes better than expected. This NFT was minted by Laney Griner, Success Kid's mother.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c0b3689b996ee3f467f69_Success%20Kid.png",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c0b3fb729bbc5faa0e654_Success%20Kid%20Small.jpeg",
+      "sortOrder": 5
+    },
+    {
+      "slug": "ermagherd",
+      "name": "Ermagherd",
+      "ticker": "$ERMAGHERD",
+      "creator": "Maggie Goldenberger",
+      "blockchain": "Ethereum",
+      "coingeckoUrl": "",
+      "description": "Ermahgerd is one of the most classic memes of all time, representative of early 2010s internet culture. It features a nerdy young Maggie Goldenberger posing with three Goosebumps books and her mouth agape in excitement. In 2015, Maggie was featured in Vanity Fair with an article titled \"Ermahgerddon: The Untold Story of the Ermahgerd Girl.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c0ae8a8c73ffbaac00b24_ermahgerd.png",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c0af3bf68ccd255f1b6ba_ermahgerd%20Small.jpeg",
+      "sortOrder": 6
+    },
+    {
+      "slug": "free-ross",
+      "name": "Free Ross",
+      "ticker": "$ROSS",
+      "creator": "Ross Ulbricht",
+      "blockchain": "Ethereum",
+      "coingeckoUrl": "",
+      "description": "",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c0aa3814c7493419db02a_FREE%20ROSS.png",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c0aadc94047f062ec9580_FREE%20ROSS%20Small.jpeg",
+      "sortOrder": 7
+    },
+    {
+      "slug": "243m-theft",
+      "name": "243M Theft",
+      "ticker": "$243M",
+      "creator": "ZachXBT",
+      "blockchain": "Base",
+      "coingeckoUrl": "https://www.geckoterminal.com/base/pools/0xa1600c9b6a1c9cc6c3265800cf4388bc8a868b4b?utm_source=coingecko&utm_medium=referral&utm_campaign=searchresults",
+      "description": "An investigation into how Greavys (Malone Iam), Wiz (Veer Chetal), and Box (Jeandiel Serrano) stole $243 million from a single individual in a highly sophisticated social engineering attack. ZachXBT originally created an open edition to signify his investigation, but due to a Zora app update, this open edition was transformed into a liquid, tradeable token without ZachXBT's knowledge. It became the first token ever released by ZachXBT.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c09ec280ffd7daa29c51b_%24243M%20Theft.png",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685c09fcf550ae3fe406ca93_%24243M%20Theft%20Small.jpeg",
+      "sortOrder": 8
+    },
+    {
+      "slug": "hanbao",
+      "name": "HANBAO",
+      "ticker": "$HANBAO",
+      "creator": "",
+      "blockchain": "Solana",
+      "coingeckoUrl": "https://www.coingecko.com/en/coins/hanbao",
+      "description": "Hanbao, the finless porpoise, marks a significant milestone in the conservation efforts for the Yangtze finless porpoise, a species critically endangered due to human activities in its natural habitat, the Yangtze River.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685be9418738a53cc3c05fa6_HANBAO%202.png",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685be9690a16a83e57feeb80_Hanbao-thumb.jpg",
+      "sortOrder": 9
+    },
+    {
+      "slug": "chiitan",
+      "name": "Chiitan",
+      "ticker": "$CHIITAN",
+      "creator": "Charando",
+      "blockchain": "Solana",
+      "coingeckoUrl": "https://www.coingecko.com/en/coins/chiitan",
+      "description": "A cute meme from Japan, I am a baby otter, my name is Chiitan, I hope it can bring you joy and happiness.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685be7d346317ac65e6e2a4d_Chiitan%20Coin.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685be80473c5b9d270903e1d_chiitan.jpeg",
+      "sortOrder": 10
+    },
+    {
+      "slug": "shark-cat",
+      "name": "Shark Cat",
+      "ticker": "$SC",
+      "creator": "Pookie",
+      "blockchain": "Solana",
+      "coingeckoUrl": "https://www.coingecko.com/en/coins/shark-cat",
+      "description": "Shark Cat is a token inspired by the cute and humorous nature of a popular internet meme. It is a 100% community-based and led project, with project leaders from around the world ensuring consistent output to drive community sentiment.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685be75585b186959168e426_Shark%20Cat%20Small%20Medium.jpeg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685be5beb074201fbbaf1a7e_Shark%20Cat%20Small.jpeg",
+      "sortOrder": 11
+    },
+    {
+      "slug": "woman-yelling-at-a-cat",
+      "name": "Woman Yelling At A Cat",
+      "ticker": "$WYAC",
+      "creator": "Taylor Armstrong",
+      "blockchain": "Solana",
+      "coingeckoUrl": "https://www.coingecko.com/en/coins/woman-yelling-at-cat",
+      "description": "The official WYAC Woman Yelling at Cat™ memecoin created by @TaylorArmstrong - the woman yelling at the cat, called Smudge.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685bdac95ee2e48e85bd04a8_Woman%20Yelling%20at%20Cat.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685bdaeeda7d989517e34e70_WYAC-thumb.jpg",
+      "sortOrder": 12
+    },
+    {
+      "slug": "og-sminem",
+      "name": "OG Sminem",
+      "ticker": "$OGSM",
+      "creator": "Roman Zuev (Sminem)",
+      "blockchain": "Ethereum",
+      "coingeckoUrl": "https://www.coingecko.com/en/coins/og-sminem",
+      "description": "One of the first true creator-backed provenance coins; OG SMINEM is a token designed to create a positive feedback loop by giving Roman 1% from each swap, promising +10 luck to the trader, and aiming for global peace, prosperity, and love.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685bda3eda7d989517e29c24_Sminem-thumb.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685bda3eda7d989517e29c24_Sminem-thumb.jpg",
+      "sortOrder": 13
+    },
+    {
+      "slug": "international-meme-fund",
+      "name": "International Meme Fund",
+      "ticker": "$IMF",
+      "creator": "IMF",
+      "blockchain": "Ethereum",
+      "coingeckoUrl": "https://www.coingecko.com/en/coins/international-meme-fund",
+      "description": "IMF is a MEME ON A MISSION to catalyze a DeFi Renaissance for the Memecoin Supercycle. IMF protocol V1 is a proof of concept that issues MONEY, a $6.9 cryptostable against PEPE, while V2 issuance is against almost any collateral.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685bd9567dc54e4c50b5c64c_IMF.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685bd9567dc54e4c50b5c64c_IMF.jpg",
+      "sortOrder": 14
+    },
+    {
+      "slug": "angry-doge-nft",
+      "name": "Angry Doge NFT",
+      "ticker": "$ANFD",
+      "creator": "Atsuko Sato",
+      "blockchain": "Ethereum",
+      "coingeckoUrl": "https://etherscan.io/token/0xDFDb7f72c1F195C5951a234e8DB9806EB0635346",
+      "description": "Fractionalized Angry Doge picture.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685bd839f141cb92daf4b738_Angry-Doge.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685bd8043adf16164b196160_Doge-thumb.jpg",
+      "sortOrder": 15
+    },
+    {
+      "slug": "the-doge-nft",
+      "name": "The Doge NFT",
+      "ticker": "$DOG",
+      "creator": "Atsuko Sato",
+      "blockchain": "Ethereum",
+      "coingeckoUrl": "https://www.coingecko.com/en/coins/the-doge-nft",
+      "description": "The Doge NFT (DOG) is a token representing the fractionalized NFT of the original Doge picture. The orignal Doge NFT was minted by Atsuko Sato, the owner of the famous doge meme.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685bd7e63adf16164b193b18_Original_Doge_meme.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685bd8043adf16164b196160_Doge-thumb.jpg",
+      "sortOrder": 16
+    },
+    {
+      "slug": "elonrwa",
+      "name": "ElonRWA",
+      "ticker": "$ELONRWA",
+      "creator": "",
+      "blockchain": "Base",
+      "coingeckoUrl": "https://www.coingecko.com/en/coins/elonrwa",
+      "description": "ElonRWA is the first token backed by a real-world asset: the infamous Elon Musk portrait \"Elon, I drew you!\" ElonRWA tokens represent ownership of the physical portrait; the first of its kind. Token holders will have voting rights on what is done with the portrait in the future.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685bd59de46a5252a356bb05_ElonRWA%20I%20drew%20you.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/685bd5d528bf9b40b2ac0e41_ElonRWA-thumb.jpg",
+      "sortOrder": 17
+    },
+    {
+      "slug": "harambe",
+      "name": "Harambe",
+      "ticker": "$HARAMBE",
+      "creator": "Jeff McCurry",
+      "blockchain": "Ethereum",
+      "coingeckoUrl": "https://www.coingecko.com/en/coins/harambe",
+      "description": "In May 2016, a child fell into the gorilla enclosure at the Cincinnati zoo. Zookeepers were afraid that Harambe the gorilla would harm the child, so they shot and killed Harambe. Most all of the pictures of Harambe used to report this event were taken by Jeff McCurry, a photographer who had known Harambe for many years. Despite widespread coverage, Jeff saw little compensation for his work. By minting the most famous images, and then a series of NFTs of lesser known images, Jeff has helped raise money for gorilla charities at a level that otherwise would not have been possible. BIC Dao has collected several pieces from Jeffs Harambe Legends Collection.",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6828dcfe292840b5a7f20ed0_harambe.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852b128862f9ff11db7095e_Mask%20group-11.png",
+      "sortOrder": 18
+    },
+    {
+      "slug": "feisty-doge-nft",
+      "name": "Feisty Doge (BIC DAO)",
+      "ticker": "$NFD",
+      "creator": "Atsuko Sato",
+      "blockchain": "Ethereum",
+      "coingeckoUrl": "https://www.coingecko.com/en/coins/feisty-doge-nft",
+      "description": "The Bureau of Internet Culture is a global collective on a mission is to grow & steward a treasury of artifacts that future historians will cite when describing the culture of our time. A treasury anyone can own a stake in. Holding $NFD gives you fractional ownership of THE meme treasury and GOVERNANCE VOTING RIGHTS. As the treasury grows, so does the cultural and economic VALUE, aligning collectors, fans, and creators alike",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6828dcbed8c30949b2bc3c44_feisty%20doge.jpg",
+      "thumbnail": "https://cdn.prod.website-files.com/67c1cc3916af278bec2eaa69/6852b1c8c9596e9deb6b7a8b_Mask%20group-14.png",
+      "sortOrder": 19
+    }
+  ],
+  "site": {
+    "description": "BIC aims to collect and archive as many culturally impactful tokens as possible—those with the provenance of their original creators.",
+    "ogImage": "https://cdn.prod.website-files.com/67c1cc3916af278bec2ea9d7/6828e64f39ea6ea598310f26_home%20cover.jpg",
+    "nav": {
+      "cta": {
+        "label": "JOIN The bureau",
+        "href": "https://swap.defillama.com/?chain=ethereum&from=0x0000000000000000000000000000000000000000&to=0xdfdb7f72c1f195c5951a234e8db9806eb0635346"
+      },
+      "socials": [
+        {
+          "platform": "x",
+          "href": "https://x.com/BIC_dao"
+        },
+        {
+          "platform": "discord",
+          "href": "https://discord.gg/KypzK9B3sD"
+        },
+        {
+          "platform": "telegram",
+          "href": "https://t.me/feistydoge"
+        },
+        {
+          "platform": "dexscreener",
+          "href": "https://dexscreener.com/ethereum/0xeefa3b448768dd561af4f743c9e925987a1f8d09"
+        }
+      ]
+    },
+    "cta": {
+      "label": "join us",
+      "title": "WE’RE BUILDING A TREASURY OF VALUABLE MEMETIC ARTIFACTS THAT FUTURE HISTORIANS WILL CITE WHEN DESCRIBING THE CULTURE OF OUR TIME.\n\nA TREASURY YOU CAN OWN A STAKE IN.",
+      "link": {
+        "label": "JOIN OUR DISCORD",
+        "href": "https://discord.gg/KypzK9B3sD"
+      }
+    },
+    "footer": {
+      "orgLinks": [
+        {
+          "label": "What is the BIC",
+          "href": "#Explainer"
+        },
+        {
+          "label": "Organisation",
+          "href": "#Explainer"
+        },
+        {
+          "label": "Provenance",
+          "href": "/provenance"
+        },
+        {
+          "label": "Memes",
+          "href": "#Treasury"
+        }
+      ],
+      "memes": [
+        "call-an-ambulance",
+        "caroline-ellison-testifying-from-witness-box",
+        "crying-man-meme",
+        "dancing-baby",
+        "draw-25"
+      ],
+      "tokenLinks": [
+        {
+          "label": "Coingecko",
+          "href": "https://www.coingecko.com/en/coins/feisty-doge-nft"
+        },
+        {
+          "label": "Etherscan",
+          "href": "https://etherscan.io/token/0xdfdb7f72c1f195c5951a234e8db9806eb0635346"
+        },
+        {
+          "label": "CoinMarketCap",
+          "href": "https://coinmarketcap.com/currencies/feisty-doge-nft/"
+        }
+      ],
+      "socialLinks": [
+        {
+          "label": "Discord",
+          "href": "https://discord.gg/KypzK9B3sD"
+        },
+        {
+          "label": "Telegram",
+          "href": "https://t.me/feistydoge"
+        },
+        {
+          "label": "X (fka Twitter)",
+          "href": "https://twitter.com/BIC_dao"
+        },
+        {
+          "label": "Join the BIC",
+          "href": "https://swap.defillama.com/?chain=ethereum&from=0x0000000000000000000000000000000000000000&to=0xdfdb7f72c1f195c5951a234e8db9806eb0635346"
+        }
+      ],
+      "contract": "0xDFDb7f72c1F195C5951a234e8DB9806EB0635346",
+      "copyright": "© Copyright 2025 | Bureau of Internet Culture"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "~OWN ~A PIECE OF \nINTERNET CULTURE",
+      "links": [
+        {
+          "label": "Treasury",
+          "href": "#Treasury"
+        },
+        {
+          "label": "Provenance manifesto",
+          "href": "#Provenance"
+        },
+        {
+          "label": "message to creators",
+          "href": "#Creators"
+        },
+        {
+          "label": "Global Organization",
+          "href": "#Explainer"
+        }
+      ],
+      "row1": [
+        "the-silent-protector",
+        "mother-ignoring-kid-drowning-in-a-pool",
+        "gigachad",
+        "me-gusta",
+        "keyboard-cat",
+        "feisty-doge"
+      ],
+      "row2": [
+        "harambe",
+        "baton-roue",
+        "unimpressed-nightclub-girl",
+        "awkward-white-people-smile",
+        "caroline-ellison-testifying-from-witness-box",
+        "shareholder-value"
+      ]
+    },
+    "explainer": {
+      "label": "INTERNET HISTORY, PRESERVED",
+      "cards": [
+        {
+          "category": "I D E N T I T Y",
+          "title": "~WHO~ \nWE ARE",
+          "subtitle": "CURATORS AND STEWARDS",
+          "bodyHtml": "The Bureau of Internet Culture is a global collective of technologists, investors, and artists safeguarding the web’s most iconic memes. <br><br>We source, authenticate, and archive digital artifacts so they can be appreciated—and owned—forever on-chain.",
+          "link": {
+            "label": "READ MORE ABOUT US",
+            "href": "#Creators"
+          }
+        },
+        {
+          "category": "P R I N C I P L E S",
+          "title": "WHAT WE ~BELIEVE~ IN",
+          "subtitle": "PROVENANCE AND AUTHENTICITY",
+          "bodyHtml": "Original creators deserve credit—and revenue—for the memes that move us. We fight for this!<br><br>Our mission is to grow &amp; steward a treasury of artifacts that future historians will cite when describing the culture of our time. A treasury anyone can own a stake in.",
+          "link": {
+            "label": "READ OUR MANIFESTO",
+            "href": "/provenance"
+          }
+        },
+        {
+          "category": "O W N E R S H I P",
+          "title": "~OWNING\n~$NFD",
+          "subtitle": "A stake in the treasury",
+          "bodyHtml": "Holding $NFD gives you fractional ownership of THE meme treasury and GOVERNANCE VOTING RIGHTS.<br><br>As the treasury grows, so does the cultural and economic VALUE, aligning collectors, fans, and creators alike.<br>",
+          "link": {
+            "label": "BUY OUR TOKEN",
+            "href": "https://swap.defillama.com/?chain=ethereum&from=0x0000000000000000000000000000000000000000&to=0xdfdb7f72c1f195c5951a234e8db9806eb0635346"
+          }
+        }
+      ]
+    },
+    "treasury": {
+      "label": "OUR TREASURY",
+      "nftsLabel": "NFTs",
+      "tokensLabel": "Tokens"
+    },
+    "manifesto": {
+      "label": "PROVENANCE",
+      "title": "OUR PROVENANCE ~MANIFESTO~",
+      "items": [
+        {
+          "title": "PEOPLE CARE ABOUT AUTHENTICITY. \nPROVENANCE ENSURES IT.",
+          "body": "In fine art and in finance, an unbroken chain of custody is essential. Verifiable originals always have the most value. Both financially, and culturally."
+        },
+        {
+          "title": "NFTs are the native format for digital OBJECTS, AND THEIR Provenance.",
+          "body": "When a meme is minted as an NFT, it becomes both collectible and liquid. Every transfer is etched on-chain, eliminating counterfeits and locking in creator royalties."
+        },
+        {
+          "title": "Memes Are Modern Masterpieces; THE LANGUAGE OF THE INTERNET.",
+          "body": "Memes transcend barriers of language, culture, and demographics. They can influence markets, politics, and narratives. Treating these icons with archival rigor ensures the visual language of this era is preserved—and investable."
+        },
+        {
+          "title": "Our role EXISTS as collectors and custodians.",
+          "body": "The Bureau of Internet Culture acquires, authenticates, and stores culturally significant memes entirely on-chain, while a DAO structure returns governance and upside to token holders and original creators alike."
+        },
+        {
+          "title": "LOW TIME PREFERENCE THESIS.",
+          "body": "We reject short-term speculation. Zero listing fees and transparent treasury management align us with collectors who value durability over hype and understand that authenticated digital culture will command growing premiums."
+        }
+      ],
+      "link": {
+        "label": "READ OUR FULL MANIFESTO",
+        "href": "/provenance"
+      }
+    },
+    "creators": {
+      "label": "INVITATION TO CREATORS",
+      "category": "C R E A T O R S  d e s e r v e",
+      "title": "CREDIT &~ REVENUE~",
+      "subtitle": "FOR THEIR CONTRIBUTIONS",
+      "bodyHtml": "Our global network of members helps creators verify their works, record provenance on the blockchain, and auction their work. <br><br>To date we have helped creators RAISE close to $5 Million in revenue through auctions alone. &nbsp;",
+      "link": {
+        "label": "If you are the creator of a viral cultural phenomenon, please reach out to us through Discord.",
+        "href": "https://discord.gg/KypzK9B3sD"
+      },
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2ea9d7/68593b0625319d2d8c1567eb_Gi7OfnaZOXw29k7vCZCvWU-1%202.png"
+    }
+  },
+  "provenance": {
+    "hero": {
+      "title": "PROVENANCE \n~MANIFESTO~",
+      "subtitle": "A short manifesto on the aims of the DAO",
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2ea9d7/685afc23164f81357caf6523_provenance%20banner%201.jpg"
+    },
+    "mission": {
+      "label": "OUR MISSION",
+      "blocks": [
+        {
+          "title": "**Provenance is the origin of something;** in history and art, it specifically means the chain of ownership. Along with other recorded details, this is used to verify the authenticity of an object.",
+          "bodyHtml": "<strong>Why do people care about authenticity?</strong> People are enthralled by stories. If they can be convinced that an object (physical or digital) has really experienced the events in its story, then it is imbued with this magical property - first through the individual and then through the social network of people who have had their imaginations captured the same way. Owning a recorded object inextricably weaves you into its history. This is why people desire the real thing instead of an identical faux replica; this is how, through an ownable object, a digital image can have value."
+        },
+        {
+          "title": "NFTs are the **native format** for digital objects.",
+          "bodyHtml": "We believe that a digitally native piece of art should be minted as an NFT, as a way of transforming the work into a concept we traditionally understand as an object. This NFT can be transferred between addresses - enabling the creator to sell it in order to monetize their work, while permanently engraving these transactions into the ledger to forge an immutable chain of provenance as it journeys from owner to owner. <br><br>Authenticity through provenance is a social construct. In the physical art world, the provenance of an object is a subject of great controversy - chains of ownership are foggy, and rely on 'experts' who can spin and manipulate things to create a profitable reality for themselves. As much as 20% of art in public museums may be fake.However, if something is openly verifiable and impossible to forge, it will be trusted and used more frequently.<strong> Money as a social construct relies on the same principles.</strong> The same way that Bitcoin disrupted money by becoming the perfect form of it, NFTs promise to do so to any object that can be reliably recorded on chain.<br><br>With NFTs, counterfeiting is impossible, as no one else has access to the creator's address. It may be the case that the creator has only given the address their blessing, and have delegated control of it to someone else - this is still valid, as long as it is socially understood that the artist has given their consent. As long as the creator does not expose their private keys, they will be the only one able to mint from the address. The social contract around the value and story of an object becomes reinforced by provable data, as long as the blockchain it is stored on exists. However, this is only verifiable for someone who has the context that an address is linked to a creator.<br><br>How do we verify this context? The most typical way is through social media. If an account publicly claims to be behind an on-chain action, people will first verify the account is not compromised. After some grace period, it can be committed to memory and further proven with on-chain signatures linking to the off-chain identity. We can usually trust that long standing social media accounts are linked to who they say they are.However, over time, these links will decay. Social media posts will expire and sites will become defunct; anecdotes suffice, but this may return us to the problems faced by the existing art market. After all, someone may create fake copycat collections with bogus on-chain activity in order to pass it off as real in a future where there is less readily available information - so how can we trust the objects on-chain are really what we think they are?<br><br>Some projects choose to tackle this by being purely on-chain, entirely recoverable in their intended format by anyone regardless of their outside knowledge. Sadly, this is not possible for something that we wish to link to the real world. There is no perfect solution to this problem. But we can try.<br><br>The primary failure of provenance is in its recording. We have no way of knowing that the Mona Lisa is the same one that was stolen in 1911, or its whereabouts in WWII. The blockchain has solved this for us. All we need to do is keep alive the contextual link to this data, at any point in its provenance. It seems likely that this context can survive without intervention - but we must not assume this. We must be resistant to bad actors; artistic fabrications may be minted and written to the chain, or performed virally. The flow of information evolves rapidly alongside technology, and we cannot know what to expect.<br><br>Memes are a modern language, a way of expression that can penetrate language barriers. They are cornerstones of online culture, instantly and easily recognizable. This iconography is just as culturally important as any work of art, world event or movement; it is discounted because its digital origins are not taken seriously by older generations. <br><br>The DAO intends to act as stewards for online culture, cataloguing all instances of the intersection of blockchains and cultural phenomenons. We aim to be as unbiased as possible in our recording (but not in our purchasing). Many online publications mint their articles onchain, and many users with their own stories will interact with our contracts - this data can be cross referenced by future historians to reveal the truth; we intend to continue being publicly visible to the degree that this becomes viable. We intend to mint our own record keeping on chain. Being first is not enough on its own, but it strengthens our case. Lastly, our non-trivial financial commitment to uploading some of the content fully on-chain, even if it is not properly linked to its token, is far beyond what anyone else has attempted in this field.<br><br>The long term result of these actions is an anti-extractive and reduces the saturation of collectible culture. Duplicate tokens exist for everything as they can be spun up instantly and spread by a mob of insiders for profit. These actors often have no loyalty to the ideals of the decentralized network we have built, or to the culture they pretend to champion. Our 0% fee onboarding is designed to grow our brand's trust rapidly, while starving out any competitors. This is done for the love of history and culture in the hope that it will endure. This is an extremely low time preference undertaking, a project that rejects the fast attention economy of the present for the hope that it will be appreciated in the future - one that looks so uncertain for the concept of truth.<br><br>It would be disingenuous to pretend that the DAO and its members have no profit incentive. Art speculation has always existed, and is almost unavoidable - it has taken hold of objects from jewellery to stamps. However, one can argue that the history of man is the history of capital; of different forms of power. Take Ea-Nasir, for example. We are sincere in our mission and take great risk in doing so. Cultural definitions around this medium are still being decided; values are malleable. All of our members have a great enthusiasm towards this concept and are confident to take the first step towards cementing on-chain provenance as a normalized medium for art and culture, for all the world."
+        }
+      ],
+      "link": {
+        "label": "Original thesis →\n~as written by path.eth~",
+        "href": "https://x.com/Cryptopathic/status/1740832131159306326"
+      }
+    },
+    "records": {
+      "label": "PROVENANCE RECORDS",
+      "link": {
+        "label": "the DAO records all relevant contextual links and information AT THIS LINK →",
+        "href": "https://docs.google.com/spreadsheets/d/1hg56fEz7Z9j6CSv_RcDVrgK9Yl2moJ8i9DCoWlnYL_o/edit?gid=1440252352#gid=1440252352"
+      },
+      "note": "Note that It is a perpetual work in progress."
+    },
+    "feature": {
+      "label": "Feisty Doge NFT",
+      "category": "O R I G I N   O F   N F D",
+      "title": "**In June 2021, Atsuko, the owner of Kabosu, minted **~**eight photographs as 1 of 1 NFTs.**~",
+      "subtitle": "These were auctioned off through Zora to raise money for charity. The most well known image of Kabosu, popularized as ‘doge’ with Comic Sans writing, sold to PlsrDAO for 1696 eth.",
+      "bodyHtml": "The other seven were sold to many individual collectors, the journey of which are detailed in <a href=\"https://twitter.com/Cryptopathic/status/1618612057758380035\" target=\"_blank\">this thread</a>.<br><br>Feisty doge was won by Wallet Garden’s treasury (then CryptoTrunks), and in August was fractionalized into a token — NFD — <a href=\"https://fractional.art/vaults/feisty-doge-nft\" target=\"_blank\">in partnership with Cryptopathic</a>. This was done through the site Fractional.<br><br><strong class=\"white\">NFD saw immediate success and has since gathered a passionate community</strong> that wants to see meme creators get their dues with the power of NFTs; tokens backed by provenance, a story made immutable. It was even <a href=\"https://www.forbes.com/sites/alpha-alarm/2021/08/23/this-dog-picture-briefly-became-the-worlds-most-valuable-nft-at-110m/\">written about in Forbes!</a> <br><br><strong class=\"white\">Since then, the feisty doge image has also been made fully onchain — it was uploaded using eth.fs and can be seen here: </strong><a href=\"https://ethfs.xyz/\" target=\"_blank\">ethfs.xyz</a><br><br>Another original Doge image, Angry Doge, was fractionalized in 2022 and is being given away to NFD LP stakers as a way of incentivising more liquidity, as well as giving the community a free way of earning parts of this iconic history. You can learn more on the “Lock $NFD” page above.<br><br>The provenance — the authenticated story of an object — provides the magic behind it, and gives it value beyond any copy. This is vital for validating history and is the backbone of all collectibles.<br><br><strong class=\"white\">This is what our community is about.</strong> Using the links below, you can explore more about the community and join us on discord, where we are always coming up with new ideas, have weekly meetings and share our own alpha.",
+      "link": {
+        "label": "link to original nfd launch tweet",
+        "href": "https://twitter.com/Cryptopathic/status/1428385507537526787"
+      },
+      "image": "https://cdn.prod.website-files.com/67c1cc3916af278bec2ea9d7/685af9490b48ab6a57c16999_nfd%20image.png"
+    }
+  }
+}
