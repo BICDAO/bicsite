@@ -22,14 +22,14 @@ New things get their own URL on this site (`/bici`, `/prints`, …). Bigger stan
 
 ## Stack
 
-Next.js 16 · Payload CMS 3 · Postgres (Neon in prod) · Vercel + Vercel Blob · wagmi 3 + viem · TypeScript
+Next.js 16 · Payload CMS 3 · Postgres (Prisma Postgres in prod) · Vercel + Vercel Blob · wagmi 3 + viem · TypeScript
 
 ## Run it locally
 
 You need Node 22+, Postgres, and pnpm via corepack (`corepack enable`).
 
 ```bash
-cp .env.example .env          # set POSTGRES_URL and PAYLOAD_SECRET
+cp .env.example .env          # set DATABASE_URL and PAYLOAD_SECRET
 pnpm install
 pnpm payload migrate          # create tables
 pnpm dev                      # uses the next free port
@@ -86,7 +86,8 @@ migration/            snapshot.json: backup of the original Webflow content
 
 | Variable | |
 | --- | --- |
-| `POSTGRES_URL` | Postgres connection string |
+| `DATABASE_URL` | Postgres connection string (pooled in prod) |
+| `DIRECT_URL` | optional: direct connection, used for migrations in `pnpm run ci` |
 | `PAYLOAD_SECRET` | long random string (signs sessions) |
 | `NEXT_PUBLIC_SITE_URL` | public URL (metadata, social previews) |
 | `BLOB_READ_WRITE_TOKEN` | optional: Vercel Blob for media (local `/media` otherwise) |
