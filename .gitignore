@@ -49,5 +49,6 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 
-# migration (snapshot.json is committed as the Webflow backup; images are re-downloadable)
-/migration/images/
+# migration: snapshot.json AND images/ are both committed — they are the Webflow backup.
+# The images are NOT re-downloadable once the Webflow subscription lapses; the CDN URLs
+# in snapshot.json die with it. Do not re-ignore this directory.
