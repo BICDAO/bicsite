@@ -14,6 +14,14 @@ import type { Plugin, UploadCollectionSlug } from 'payload'
 const storeId = process.env.BLOB_STORE_ID?.replace(/^store_/, '').toLowerCase()
 const baseUrl = `https://${storeId}.public.blob.vercel-storage.com`
 
+/**
+ * Prefer a static read-write token when one is configured. Left to itself @vercel/blob reaches for
+ * VERCEL_OIDC_TOKEN, which is scoped to this project and is rejected by a store owned elsewhere —
+ * so uploads fail with "Access denied" anywhere the store is not the project's own. A store token
+ * carries its own authority and works both on Vercel and from a laptop running the importer.
+ */
+const token = process.env.BLOB_READ_WRITE_TOKEN || undefined
+
 const keyFor = (collectionPrefix: string, filename: string, docPrefix?: string) =>
   getFileKey({ collectionPrefix, docPrefix, filename, useCompositePrefixes: false }).fileKey
 
@@ -34,11 +42,12 @@ const adapter: Adapter = ({ prefix = '' }) => ({
       allowOverwrite: true,
       cacheControlMaxAge: 60 * 60 * 24 * 365,
       contentType: file.mimeType,
+      token,
     })
     return data
   },
   handleDelete: async ({ doc, filename }) => {
-    await del(urlFor(keyFor(prefix, filename, doc.prefix)))
+    await del(urlFor(keyFor(prefix, filename, doc.prefix)), { token })
   },
   staticHandler: (_req, { params: { filename, prefix: docPrefix } }) =>
     Response.redirect(urlFor(keyFor(prefix, filename, docPrefix)), 302),
