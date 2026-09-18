@@ -7,6 +7,7 @@ import { Nav } from '@/components/Nav'
 import { RevealObserver } from '@/components/RevealObserver'
 import { rel } from '@/lib/format'
 import { getSite } from '@/lib/payload'
+import { SITE_URL } from '@/lib/site'
 
 import './webflow.css'
 import './site.css'
@@ -28,12 +29,6 @@ const creato = localFont({
 })
 
 const NAME = 'Bureau of Internet Culture'
-
-// Explicit URL, else Vercel's production domain, else local dev.
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL && `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`) ||
-  'http://localhost:3000'
 
 export async function generateMetadata(): Promise<Metadata> {
   const site = await getSite()
