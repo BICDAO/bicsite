@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    # A throwaway database so the build can run for real. `next build` calls generateStaticParams
+    # for /memes/[slug] and /liquid-assets/[slug], which query Payload — without a reachable
+    # database the build fails, which is exactly how production broke on 2026-09-11. An empty
+    # database is enough: the queries return no rows and the build still succeeds.
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: bicsite
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/bicsite
+      PAYLOAD_SECRET: ci-only-not-a-real-secret
+      # Must parse as a URL: layout.tsx does `new URL(SITE_URL)` and throws on anything else.
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+      # BLOB_STORE_ID is deliberately unset, so uploads fall back to local disk and CI needs no
+      # credentials for a Blob store it does not own.
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # package.json pins the pnpm version, so corepack needs no version argument.
+      - name: Enable pnpm
+        run: corepack enable
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm exec tsc --noEmit
+
+      - name: Lint
+        run: pnpm lint
+
+      # Applies every committed migration to an empty database, so a schema change that never got
+      # a migration fails here rather than on a production deploy.
+      - name: Migrate
+        run: pnpm payload migrate
+
+      - name: Build
+        run: pnpm build

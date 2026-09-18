@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { Container } from '@/components/ui'
+import { A, Container } from '@/components/ui'
 import { rv } from '@/lib/format'
 
 export const metadata: Metadata = { title: 'Page not found', robots: { index: false } }
@@ -27,9 +27,9 @@ export default function NotFound() {
               <div className="project-client-description">
                 This page has moved or never existed. The treasury is still where you left it.
               </div>
-              <a href="/" className="project-client-name">
+              <A href="/" className="project-client-name">
                 BACK TO THE BUREAU →
-              </a>
+              </A>
             </div>
           </div>
         </div>
