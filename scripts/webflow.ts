@@ -34,14 +34,18 @@ const src = (el: Element | null | undefined) => el?.getAttribute('src') ?? ''
 const slugOf = (a: Element | null) => href(a).split('/').pop() ?? ''
 const rich = (el: Element | null) => (el ? clean(el.innerHTML).trim() : '')
 
-/** Text as the browser shows it: source whitespace collapsed, <br> → newline. */
+/** Text as the browser shows it: <br> and literal newlines → newline, other whitespace collapsed. */
 const multiline = (el: Element | null) => {
   if (!el || !visible(el)) return ''
   const c = el.cloneNode(true) as Element
   c.querySelectorAll('br').forEach((br) => br.replaceWith('\u0001'))
+  // Webflow renders a plain-text field with its newlines intact, so a paragraph break reaches us as a
+  // literal \n in the text node rather than as <br>. Collapse horizontal whitespace only: /\s+/ swallows
+  // those breaks and silently joins the paragraphs with a space.
   return clean(c.textContent ?? '')
-    .replace(/\s+/g, ' ')
-    .split('\u0001')
+    .replace(/\r\n?/g, '\n')
+    .replace(/[^\S\n]+/g, ' ')
+    .split(/[\u0001\n]/)
     .map((line) => line.trim())
     .join('\n')
     .trim()
@@ -273,9 +277,12 @@ async function importSite(commit: boolean, overwrite: boolean) {
     const { docs } = await payload.find({ collection, where: { slug: { equals: slug } }, limit: 1, draft: true })
     const existing = docs[0]
     if (existing && !overwrite) return existing.id
-    log.push(`${existing ? '~' : '+'} ${collection}/${slug}`)
+    // `draft` marks an item that is unpublished in Webflow. It renders on no page, so `fetch` can
+    // never see it; such items are added to the snapshot by hand and must stay unpublished here.
+    const { draft, ...fields } = data as Record<string, unknown>
+    log.push(`${existing ? '~' : '+'} ${collection}/${slug}${draft ? ' (draft)' : ''}`)
     if (!commit) return existing?.id
-    const doc = { ...data, _status: 'published' as const }
+    const doc = { ...fields, _status: draft ? ('draft' as const) : ('published' as const) }
     return existing
       ? (await payload.update({ collection, id: existing.id, data: doc })).id
       : (await payload.create({ collection, data: doc as never })).id
