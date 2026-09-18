@@ -28,6 +28,12 @@ export function Nav({ nav }: { nav: Site['nav'] }) {
                       {cta.label}
                     </a>
                   )}
+                  {/* A route this repo owns rather than editorial content, so it is
+                      not in the Site global: an editor cannot remove the only
+                      first-party link to the migration by accident. */}
+                  <Link href="/migrate" className="nav-link">
+                    Migrate
+                  </Link>
                   <ConnectButton />
                   <div className="social-icons-navbar-container">
                     {nav?.socials?.map((s, i) => (

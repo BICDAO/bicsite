@@ -20,6 +20,10 @@ export const dateLong = (d?: string | null) =>
 
 export const isExternal = (href: string) => /^https?:\/\//.test(href)
 
+/** `0x1234…cdef`. Addresses are shown in full wherever there is room for them. */
+export const shortAddress = (address: string) =>
+  address.length <= 12 ? address : `${address.slice(0, 6)}…${address.slice(-4)}`
+
 /** Populated relationship or undefined (Payload returns ids when not populated). */
 export const rel = <T extends object>(x: number | T | null | undefined): T | undefined =>
   x && typeof x === 'object' ? x : undefined

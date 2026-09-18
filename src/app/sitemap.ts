@@ -20,6 +20,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     { url: absolute('/'), changeFrequency: 'weekly', priority: 1 },
     { url: absolute('/provenance'), changeFrequency: 'monthly', priority: 0.8 },
+    // Listed whether or not the migration is configured yet: a searchable
+    // canonical page is what keeps a phishing copy from being the first hit.
+    { url: absolute('/migrate'), changeFrequency: 'weekly', priority: 0.8 },
     ...memes.map(item('/memes')),
     ...assets.map(item('/liquid-assets')),
   ]
