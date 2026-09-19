@@ -32,7 +32,8 @@
   white-space: nowrap;
   font-size: clamp(1.5rem, 6.2vw, 3.25rem);
   line-height: 1.05;
-  margin: 0;
+  margin: 24px 0 0;
+  text-align: center;
 }
 
 /* The page is a tool. Drop the editorial top padding the marketing sections
@@ -819,13 +820,14 @@
   color: inherit;
 }
 
-/* The two token addresses, under the amount field. Deliberately quiet: there
-   to be copied into a scanner, not to be read every visit. */
+/* Both addresses on one line, directly under the field. Deliberately quiet:
+   there to be copied into a scanner, not read every visit. Wraps to two lines
+   on a narrow screen rather than overflowing. */
 .mig-cas {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
-  margin: 10px 0 0;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 6px 0 0;
   font-size: 11px;
   line-height: 1.5;
   color: var(--gray-500, #8a8a8a);
@@ -852,4 +854,51 @@
 
 .mig-arrow-out {
   color: #f87171;
+}
+
+/* The wallet picker as a modal.
+   On a phone the inline list ran most of the screen before the visitor
+   reached anything they could use, so it is behind one button now. <dialog>
+   rather than a library: focus trapping, Escape and the backdrop are the
+   platform's job, and this page deliberately carries no wallet SDK. */
+.mig-connect-cta {
+  width: 100%;
+}
+
+.mig-dialog {
+  border: 1px solid var(--black-200);
+  background-color: var(--black, #0b0b0b);
+  color: var(--white, #fff);
+  width: min(420px, calc(100vw - 32px));
+  max-height: min(70vh, 640px);
+  padding: 0;
+  overflow: auto;
+}
+
+.mig-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.mig-dialog-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+}
+
+.mig-dialog-close {
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 767px) {
+  /* Bottom sheet on a phone: the thumb is at the bottom of the screen. */
+  .mig-dialog {
+    width: 100vw;
+    max-width: 100vw;
+    margin: auto auto 0;
+    max-height: 80vh;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
 }

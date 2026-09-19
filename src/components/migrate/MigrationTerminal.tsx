@@ -131,6 +131,7 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
   const now = useNow()
   const [direction, setDirection] = useState<Direction>('forward')
   const [amountText, setAmountText] = useState('')
+  const walletDialog = useRef<HTMLDialogElement>(null)
   const baseId = useId()
   const inputId = `${baseId}-amount`
   const helpId = `${baseId}-help`
@@ -178,6 +179,12 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
   const advice = capAdvice({ direction, amount, cap })
   const inFlight = isInFlight(flow.step)
   const connected = wallet.status === 'connected' && wallet.account !== null
+  // Close the picker when a wallet actually connects. Not in onPick: connect()
+  // swallows its own failures into wallet.error, so closing there would hide
+  // the reason the wallet said no.
+  useEffect(() => {
+    if (connected) walletDialog.current?.close()
+  }, [connected])
   const wrongChain = connected && !wallet.onMainnet
 
   const described = describeFlow(flow, {
@@ -352,16 +359,38 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
         </Panel>
       )}
 
+      {/* On a phone the wallet list ran most of the screen before anything
+          usable. It is now one button and a modal, so the form is reachable
+          whether or not a wallet is connected. */}
       {page === 'read-only' && !connected && (
         <Panel>
+          <button
+            type="button"
+            onClick={() => walletDialog.current?.showModal()}
+            className="mig-action mig-connect-cta"
+          >
+            Connect wallet
+          </button>
+        </Panel>
+      )}
+
+      <dialog ref={walletDialog} className="mig-dialog" aria-label="Choose a wallet">
+        <div className="mig-dialog-body">
           <WalletPicker
             wallets={wallet.wallets}
             connecting={wallet.status === 'connecting' ? wallet.rdns : null}
             error={wallet.error}
             onPick={(rdns) => void wallet.connect(rdns)}
           />
-        </Panel>
-      )}
+          <button
+            type="button"
+            onClick={() => walletDialog.current?.close()}
+            className="mig-btn-plain mig-dialog-close"
+          >
+            Cancel
+          </button>
+        </div>
+      </dialog>
 
       <Panel>
         <fieldset disabled={inFlight} className="mig-fieldset">
@@ -443,18 +472,9 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
             Max
           </button>
         </div>
-        {max?.cappedBy === 'cap' && balance !== null && cap !== null && (
-          <p className="mig-note">
-            {`Max is the contract's room, not your balance: ${formatAmountGrouped(cap)} of your ${formatAmountGrouped(balance)} ${tokenIn(direction)}. Send the rest in a second migration.`}
-          </p>
-        )}
-        <p id={helpId} className="mig-help">
-          {help}
-        </p>
 
-        {/* The two contract addresses, under the field where an amount was just
-            typed. Arrows match the direction control: the token going in, then
-            the token coming back. A visitor can paste either into a scanner
+        {/* Both addresses on one line, directly under the field. Arrows match
+            the direction control: green in, red back. Copyable into a scanner
             without taking this page's word for anything. */}
         {config && (
           <p className="mig-cas">
@@ -488,6 +508,15 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
             </span>
           </p>
         )}
+        {max?.cappedBy === 'cap' && balance !== null && cap !== null && (
+          <p className="mig-note">
+            {`Max is the contract's room, not your balance: ${formatAmountGrouped(cap)} of your ${formatAmountGrouped(balance)} ${tokenIn(direction)}. Send the rest in a second migration.`}
+          </p>
+        )}
+        <p id={helpId} className="mig-help">
+          {help}
+        </p>
+
         {classification === 'exceeds-cap' && cap !== null && cap > ZERO && !inFlight && (
           <button
             type="button"
