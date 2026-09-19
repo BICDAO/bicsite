@@ -130,6 +130,12 @@ export function planSteps(input: {
   allowance: bigint | null
   amount: bigint
 }): ['approve', 'send'] | ['send']
+export function forwardCap(input: {
+  inventoryB: bigint | null
+  votingTokens: bigint | null
+  userPrice: bigint | null
+}): bigint | null
+
 export function maxAmount(input: { balance: bigint | null; cap: bigint | null }): {
   value: bigint
   cappedBy: 'balance' | 'cap'
@@ -306,4 +312,9 @@ export const BIC_ABI_SIGNATURES: readonly [
   'error ERC20InvalidSender(address sender)',
   'error ERC20InvalidSpender(address spender)',
   'function treasury() view returns (address)',
+]
+
+export const NFD_VAULT_ABI_SIGNATURES: readonly [
+  'function votingTokens() view returns (uint256)',
+  'function userPrices(address holder) view returns (uint256)',
 ]

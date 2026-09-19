@@ -73,6 +73,7 @@ import {
   describeRevert,
   describeWalletError,
   flowReducer,
+  forwardCap,
   formatAmount,
   formatAmountExact,
   formatAmountGrouped,
@@ -2372,8 +2373,13 @@ test('the ABI tuples in src/lib/migration.d.ts equal the runtime arrays, element
   ]
   assert.deepStrictEqual(
     blocks.map((m) => m[1]),
-    ['MIGRATOR_ABI_SIGNATURES', 'ERC20_ABI_SIGNATURES', 'BIC_ABI_SIGNATURES'],
-    'could not find the three tuple declarations in src/lib/migration.d.ts',
+    [
+      'MIGRATOR_ABI_SIGNATURES',
+      'ERC20_ABI_SIGNATURES',
+      'BIC_ABI_SIGNATURES',
+      'NFD_VAULT_ABI_SIGNATURES',
+    ],
+    'could not find the four tuple declarations in src/lib/migration.d.ts',
   )
   for (const [, name, body] of blocks) {
     const declared = [...body.matchAll(/'([^']*)'/g)].map((m) => m[1])
@@ -2471,5 +2477,58 @@ test('a stalled flow ignores a timeout FAIL, records the approval block, and log
     flowReducer(approved, ev('LATE_HASH', { which: 'approve', hash: H2 })),
     approved,
     'only an aborted flow takes a late hash',
+  )
+})
+
+// --- the voter cap -----------------------------------------------------------
+// A voter's forward migration is capped by the NFD vault's votingTokens as well
+// as by the hook's inventory: their NFD moving to the PoolManager decrements
+// that counter, and above it the migration reverts TransferFromFailed. Observed
+// live on 2026-09-19, when a voter migrated 700,848,161.21 NFD and the counter
+// fell by exactly that. Capping here is what keeps the word "voter" out of the
+// UI — the Max button offers a number that works and an over-typed amount lands
+// on the exceeds-cap copy that already exists.
+
+test('forwardCap: a non-voter is capped by inventory, and never by the counter', () => {
+  const inv = tokens(90_000_000_000n)
+  const vt = tokens(6_106_178_437n)
+  assert.equal(forwardCap({ inventoryB: inv, votingTokens: vt, userPrice: ZERO }), inv)
+  // The common path must not go unknown because one extra read failed.
+  assert.equal(forwardCap({ inventoryB: inv, votingTokens: null, userPrice: ZERO }), inv)
+})
+
+test('forwardCap: a voter takes whichever of inventory and votingTokens is smaller', () => {
+  const inv = tokens(90_000_000_000n)
+  const vt = tokens(6_106_178_437n)
+  const voter = tokens(333_333n)
+  assert.equal(forwardCap({ inventoryB: inv, votingTokens: vt, userPrice: voter }), vt)
+  const small = tokens(1_000n)
+  assert.equal(forwardCap({ inventoryB: small, votingTokens: vt, userPrice: voter }), small)
+  // An exhausted counter caps at zero here rather than reverting on chain.
+  assert.equal(forwardCap({ inventoryB: inv, votingTokens: ZERO, userPrice: voter }), ZERO)
+})
+
+test('forwardCap: unknown rather than optimistic when a read is missing', () => {
+  const inv = tokens(90_000_000_000n)
+  const vt = tokens(6_106_178_437n)
+  assert.equal(forwardCap({ inventoryB: inv, votingTokens: null, userPrice: 1n }), null)
+  assert.equal(forwardCap({ inventoryB: inv, votingTokens: vt, userPrice: null }), null)
+  assert.equal(forwardCap({ inventoryB: null, votingTokens: vt, userPrice: ZERO }), null)
+})
+
+test('forwardCap: feeds the existing exceeds-cap copy and the Max button', () => {
+  const inv = tokens(90_000_000_000n)
+  const vt = tokens(6_106_178_437n)
+  const cap = forwardCap({ inventoryB: inv, votingTokens: vt, userPrice: 1n })
+  const over = vt + 1n
+  assert.equal(
+    classifyAmount({ direction: 'forward', amount: over, balance: over, cap, paused: false }),
+    'exceeds-cap',
+  )
+  assert.deepEqual(maxAmount({ balance: inv, cap }), { value: vt, cappedBy: 'cap' })
+  // And the amount at the cap is fine.
+  assert.equal(
+    classifyAmount({ direction: 'forward', amount: vt, balance: inv, cap, paused: false }),
+    'ok',
   )
 })

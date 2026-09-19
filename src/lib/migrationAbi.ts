@@ -1,6 +1,11 @@
 import { parseAbi } from 'viem'
 
-import { BIC_ABI_SIGNATURES, ERC20_ABI_SIGNATURES, MIGRATOR_ABI_SIGNATURES } from './migration'
+import {
+  BIC_ABI_SIGNATURES,
+  ERC20_ABI_SIGNATURES,
+  MIGRATOR_ABI_SIGNATURES,
+  NFD_VAULT_ABI_SIGNATURES,
+} from './migration'
 
 /**
  * The ABIs, typed.
@@ -14,3 +19,4 @@ import { BIC_ABI_SIGNATURES, ERC20_ABI_SIGNATURES, MIGRATOR_ABI_SIGNATURES } fro
 export const MIGRATOR_ABI = parseAbi(MIGRATOR_ABI_SIGNATURES)
 export const ERC20_ABI = parseAbi(ERC20_ABI_SIGNATURES)
 export const BIC_ABI = parseAbi(BIC_ABI_SIGNATURES)
+export const NFD_VAULT_ABI = parseAbi(NFD_VAULT_ABI_SIGNATURES)
