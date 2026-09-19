@@ -728,3 +728,44 @@
   gap: 2px;
   display: flex;
 }
+
+/* The explainer, collapsed.
+   Landing on this page should show a title and the thing you came to use.
+   Everything below is reference: how the two steps work, what the multisig
+   can and cannot do, that there is no external audit, and that only the
+   mainnet NFD migrates. None of it is decoration — a reader who wants it
+   needs it — so it collapses rather than going away. */
+.mig-more {
+  border-top: 1px solid var(--mig-rule, rgba(255, 255, 255, 0.14));
+  margin-top: 2rem;
+  padding-top: 0.25rem;
+}
+
+.mig-more-summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.9rem 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.68;
+  transition: opacity 0.15s ease;
+}
+
+.mig-more-summary::-webkit-details-marker {
+  display: none;
+}
+
+.mig-more-summary::before {
+  content: '+ ';
+  font-variant-numeric: tabular-nums;
+}
+
+.mig-more[open] .mig-more-summary::before {
+  content: '− ';
+}
+
+.mig-more-summary:hover,
+.mig-more-summary:focus-visible {
+  opacity: 1;
+}
