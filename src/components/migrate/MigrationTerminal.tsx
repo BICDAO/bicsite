@@ -42,7 +42,7 @@ import { RevokeButton, type RevokePhase } from './RevokeButton'
 import { TxLog } from './TxLog'
 import { WalletPicker } from './WalletPicker'
 import { continueFlow, startFlow, type FlowDeps } from './runFlow'
-import { Heading, Panel } from './ui'
+import { Panel } from './ui'
 import { useMigrationReads, type Config, type Reads } from './useMigrationReads'
 import { useNow } from './useNow'
 import { useWallet } from './useWallet'
@@ -619,27 +619,17 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
               )}
             </>
           )}
+          {/* The one fact worth a line: a migration is two wallet prompts, and
+              the first one names the spender. Checking that address is the
+              whole defence against a clone of this page. */}
           <p className="mig-note">
-            This page never asks for a seed phrase, never asks where to send tokens, and never asks
-            for more than the amount you typed. Tokens go to the account you connected.
+            Two wallet prompts: an approval, then the migration. The approval should show the
+            spender as{' '}
+            <span className="mig-mono">{config ? shortAddress(config.hook) : 'the migration contract'}</span>{' '}
+            and exactly the amount you typed — if it shows anything else, reject it.
           </p>
         </div>
       </Panel>
-
-      {page === 'read-only' && config && (
-        <Panel tone="notice">
-          <Heading>Before you sign</Heading>
-          <p className="mig-p">
-            For one migration, two prompts at most. The first is an approval: your wallet will show
-            the spender as <span className="mig-mono">{config.hook}</span> and the amount as exactly
-            what you typed — if it shows anything else, reject it. The second is the migration
-            itself, sending to the account you connected. If your wallet lets you edit the approval
-            amount and you lower it, this page stops and asks again rather than sending a migration
-            that would fail. A transaction that fails on chain moves no tokens; it costs gas and
-            nothing more.
-          </p>
-        </Panel>
-      )}
 
       {/* Mounted for the life of the page so the first sentence is announced. */}
       <p aria-live="polite" className="mig-sr">
