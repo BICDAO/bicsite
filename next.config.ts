@@ -7,6 +7,13 @@ const __filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(__filename)
 
 const nextConfig: NextConfig = {
+  // The Webflow 301 table, reimplemented. Exported from Site settings -> Publishing on the
+  // bic-redesign site on 2026-09-19, before the subscription lapses (it is invisible from outside
+  // the account and dies with it). The table had exactly ONE row -- see docs/webflow-redirects.md
+  // for the full export and for the 34 template URLs that are deliberately NOT redirected.
+  async redirects() {
+    return [{ source: '/about', destination: '/provenance', permanent: true }]
+  },
   images: {
     localPatterns: [
       {
