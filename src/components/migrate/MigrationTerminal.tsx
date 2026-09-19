@@ -38,13 +38,11 @@ import {
   type Direction,
 } from '@/lib/migration'
 
-import { CapsStrip } from './CapsStrip'
-import { ContractsPanel } from './ContractsPanel'
 import { RevokeButton, type RevokePhase } from './RevokeButton'
 import { TxLog } from './TxLog'
 import { WalletPicker } from './WalletPicker'
 import { continueFlow, startFlow, type FlowDeps } from './runFlow'
-import { Heading, Panel } from './ui'
+import { Panel } from './ui'
 import { useMigrationReads, type Config, type Reads } from './useMigrationReads'
 import { useNow } from './useNow'
 import { useWallet } from './useWallet'
@@ -133,6 +131,7 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
   const now = useNow()
   const [direction, setDirection] = useState<Direction>('forward')
   const [amountText, setAmountText] = useState('')
+  const walletDialog = useRef<HTMLDialogElement>(null)
   const baseId = useId()
   const inputId = `${baseId}-amount`
   const helpId = `${baseId}-help`
@@ -180,6 +179,12 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
   const advice = capAdvice({ direction, amount, cap })
   const inFlight = isInFlight(flow.step)
   const connected = wallet.status === 'connected' && wallet.account !== null
+  // Close the picker when a wallet actually connects. Not in onPick: connect()
+  // swallows its own failures into wallet.error, so closing there would hide
+  // the reason the wallet said no.
+  useEffect(() => {
+    if (connected) walletDialog.current?.close()
+  }, [connected])
   const wrongChain = connected && !wallet.onMainnet
 
   const described = describeFlow(flow, {
@@ -324,8 +329,6 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
 
   return (
     <>
-      <CapsStrip reads={reads} now={now} page={page} stale={stale} />
-
       {page === 'read-only' && paused && (
         <Panel tone="notice" role="status" id={pausedId}>
           <p className="mig-p">
@@ -356,6 +359,39 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
         </Panel>
       )}
 
+      {/* On a phone the wallet list ran most of the screen before anything
+          usable. It is now one button and a modal, so the form is reachable
+          whether or not a wallet is connected. */}
+      {page === 'read-only' && !connected && (
+        <Panel>
+          <button
+            type="button"
+            onClick={() => walletDialog.current?.showModal()}
+            className="mig-action mig-connect-cta"
+          >
+            Connect wallet
+          </button>
+        </Panel>
+      )}
+
+      <dialog ref={walletDialog} className="mig-dialog" aria-label="Choose a wallet">
+        <div className="mig-dialog-body">
+          <WalletPicker
+            wallets={wallet.wallets}
+            connecting={wallet.status === 'connecting' ? wallet.rdns : null}
+            error={wallet.error}
+            onPick={(rdns) => void wallet.connect(rdns)}
+          />
+          <button
+            type="button"
+            onClick={() => walletDialog.current?.close()}
+            className="mig-btn-plain mig-dialog-close"
+          >
+            Cancel
+          </button>
+        </div>
+      </dialog>
+
       <Panel>
         <fieldset disabled={inFlight} className="mig-fieldset">
           <legend className="mig-legend">Direction</legend>
@@ -374,8 +410,16 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
                     className="mig-sr"
                     aria-describedby={d === 'forward' && paused ? pausedId : undefined}
                   />
-                  <label htmlFor={id} className="mig-seg-option">
-                    {d === 'forward' ? 'NFD → BIC' : 'BIC → NFD'}
+                  <label htmlFor={id} className={`mig-seg-option mig-dir-${d}`}>
+                    {d === 'forward' ? (
+                      <>
+                        NFD <span className="mig-arrow">→</span> BIC
+                      </>
+                    ) : (
+                      <>
+                        BIC <span className="mig-arrow">→</span> NFD
+                      </>
+                    )}
                   </label>
                 </span>
               )
@@ -428,6 +472,42 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
             Max
           </button>
         </div>
+
+        {/* Both addresses on one line, directly under the field. Arrows match
+            the direction control: green in, red back. Copyable into a scanner
+            without taking this page's word for anything. */}
+        {config && (
+          <p className="mig-cas">
+            <span className="mig-ca">
+              <span className={direction === 'forward' ? 'mig-arrow-in' : 'mig-arrow-out'}>
+                {direction === 'forward' ? '→' : '←'}
+              </span>{' '}
+              NFD{' '}
+              <a
+                href={explorer.token(NFD_ADDRESS)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mig-ca-addr"
+              >
+                {NFD_ADDRESS}
+              </a>
+            </span>
+            <span className="mig-ca">
+              <span className={direction === 'forward' ? 'mig-arrow-out' : 'mig-arrow-in'}>
+                {direction === 'forward' ? '←' : '→'}
+              </span>{' '}
+              BIC{' '}
+              <a
+                href={explorer.token(config.bic)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mig-ca-addr"
+              >
+                {config.bic}
+              </a>
+            </span>
+          </p>
+        )}
         {max?.cappedBy === 'cap' && balance !== null && cap !== null && (
           <p className="mig-note">
             {`Max is the contract's room, not your balance: ${formatAmountGrouped(cap)} of your ${formatAmountGrouped(balance)} ${tokenIn(direction)}. Send the rest in a second migration.`}
@@ -436,6 +516,7 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
         <p id={helpId} className="mig-help">
           {help}
         </p>
+
         {classification === 'exceeds-cap' && cap !== null && cap > ZERO && !inFlight && (
           <button
             type="button"
@@ -482,14 +563,7 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
             <button type="button" disabled className="mig-action">
               {page === 'checking' ? 'Reading the contracts…' : 'Not available'}
             </button>
-          ) : !connected ? (
-            <WalletPicker
-              wallets={wallet.wallets}
-              connecting={wallet.status === 'connecting' ? wallet.rdns : null}
-              error={wallet.error}
-              onPick={(rdns) => void wallet.connect(rdns)}
-            />
-          ) : (
+          ) : !connected ? null : (
             <>
               <div className="mig-connected">
                 <span className="mig-label">Connected</span>
@@ -545,27 +619,17 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
               )}
             </>
           )}
+          {/* The one fact worth a line: a migration is two wallet prompts, and
+              the first one names the spender. Checking that address is the
+              whole defence against a clone of this page. */}
           <p className="mig-note">
-            This page never asks for a seed phrase, never asks where to send tokens, and never asks
-            for more than the amount you typed. Tokens go to the account you connected.
+            Two wallet prompts: an approval, then the migration. The approval should show the
+            spender as{' '}
+            <span className="mig-mono">{config ? shortAddress(config.hook) : 'the migration contract'}</span>{' '}
+            and exactly the amount you typed — if it shows anything else, reject it.
           </p>
         </div>
       </Panel>
-
-      {page === 'read-only' && config && (
-        <Panel tone="notice">
-          <Heading>Before you sign</Heading>
-          <p className="mig-p">
-            For one migration, two prompts at most. The first is an approval: your wallet will show
-            the spender as <span className="mig-mono">{config.hook}</span> and the amount as exactly
-            what you typed — if it shows anything else, reject it. The second is the migration
-            itself, sending to the account you connected. If your wallet lets you edit the approval
-            amount and you lower it, this page stops and asks again rather than sending a migration
-            that would fail. A transaction that fails on chain moves no tokens; it costs gas and
-            nothing more.
-          </p>
-        </Panel>
-      )}
 
       {/* Mounted for the life of the page so the first sentence is announced. */}
       <p aria-live="polite" className="mig-sr">
@@ -579,12 +643,6 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
         onDismiss={() => dispatch({ type: 'DISMISS' })}
       />
 
-      <ContractsPanel
-        hook={config?.hook ?? hook}
-        bic={config?.bic ?? bic}
-        reads={reads}
-        now={now}
-      />
     </>
   )
 }

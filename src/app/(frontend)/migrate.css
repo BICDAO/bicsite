@@ -24,8 +24,33 @@
 
 /* --- hero ---------------------------------------------------------------- */
 
+/* One line, always. The title shrinks to fit rather than wrapping: two lines
+   of heading is a whole band of the fold spent on words the visitor already
+   read in the tab. */
 .mig-hero-title {
-  max-width: 900px;
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(1.5rem, 6.2vw, 3.25rem);
+  line-height: 1.05;
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+/* The page is a tool. Drop the editorial top padding the marketing sections
+   use so the terminal and the connect control are both above the fold. */
+.mig-section.section.migrate {
+  padding-top: 92px;
+  padding-bottom: 64px;
+}
+
+.mig-section .mig {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .mig-section.section.migrate {
+    padding-top: 64px;
+  }
 }
 
 .mig-hero-lede {
@@ -727,4 +752,153 @@
   flex-direction: column;
   gap: 2px;
   display: flex;
+}
+
+/* The explainer, collapsed.
+   Landing on this page should show a title and the thing you came to use.
+   Everything below is reference: how the two steps work, what the multisig
+   can and cannot do, that there is no external audit, and that only the
+   mainnet NFD migrates. None of it is decoration — a reader who wants it
+   needs it — so it collapses rather than going away. */
+.mig-more {
+  border-top: 1px solid var(--mig-rule, rgba(255, 255, 255, 0.14));
+  margin-top: 2rem;
+  padding-top: 0.25rem;
+}
+
+.mig-more-summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.9rem 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.68;
+  transition: opacity 0.15s ease;
+}
+
+.mig-more-summary::-webkit-details-marker {
+  display: none;
+}
+
+.mig-more-summary::before {
+  content: '+ ';
+  font-variant-numeric: tabular-nums;
+}
+
+.mig-more[open] .mig-more-summary::before {
+  content: '− ';
+}
+
+.mig-more-summary:hover,
+.mig-more-summary:focus-visible {
+  opacity: 1;
+}
+
+/* Direction: green going to BIC, red coming back. Colour is a second channel,
+   never the only one — the label still reads "NFD → BIC" either way, so the
+   meaning survives for anyone who cannot separate the two hues. */
+.mig-dir-forward .mig-arrow {
+  color: #4ade80;
+}
+
+.mig-dir-reverse .mig-arrow {
+  color: #f87171;
+}
+
+.mig-seg input:checked + .mig-dir-forward {
+  background-color: #4ade80;
+  color: var(--black);
+}
+
+.mig-seg input:checked + .mig-dir-reverse {
+  background-color: #f87171;
+  color: var(--black);
+}
+
+.mig-seg input:checked + .mig-seg-option .mig-arrow {
+  color: inherit;
+}
+
+/* Both addresses on one line, directly under the field. Deliberately quiet:
+   there to be copied into a scanner, not read every visit. Wraps to two lines
+   on a narrow screen rather than overflowing. */
+.mig-cas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 6px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--gray-500, #8a8a8a);
+}
+
+.mig-ca {
+  font-family: var(--mig-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  overflow-wrap: anywhere;
+}
+
+.mig-ca-addr {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.mig-ca-addr:hover {
+  color: var(--white);
+}
+
+.mig-arrow-in {
+  color: #4ade80;
+}
+
+.mig-arrow-out {
+  color: #f87171;
+}
+
+/* The wallet picker as a modal.
+   On a phone the inline list ran most of the screen before the visitor
+   reached anything they could use, so it is behind one button now. <dialog>
+   rather than a library: focus trapping, Escape and the backdrop are the
+   platform's job, and this page deliberately carries no wallet SDK. */
+.mig-connect-cta {
+  width: 100%;
+}
+
+.mig-dialog {
+  border: 1px solid var(--black-200);
+  background-color: var(--black, #0b0b0b);
+  color: var(--white, #fff);
+  width: min(420px, calc(100vw - 32px));
+  max-height: min(70vh, 640px);
+  padding: 0;
+  overflow: auto;
+}
+
+.mig-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.mig-dialog-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+}
+
+.mig-dialog-close {
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 767px) {
+  /* Bottom sheet on a phone: the thumb is at the bottom of the screen. */
+  .mig-dialog {
+    width: 100vw;
+    max-width: 100vw;
+    margin: auto auto 0;
+    max-height: 80vh;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
 }
