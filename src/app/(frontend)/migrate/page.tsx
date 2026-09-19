@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import { MigrationTerminal } from '@/components/migrate/MigrationTerminal'
-import { A, Container, SectionTop } from '@/components/ui'
+import { A, Container } from '@/components/ui'
 import { explorer } from '@/lib/explorer'
 import { shortAddress } from '@/lib/format'
 import {
@@ -119,21 +119,11 @@ export default function MigratePage() {
 
   return (
     <>
-      <section className="section about">
+      <section className="section migrate mig-section">
         <Container>
-          <div className="about-wrapper">
-            <div className="about-top-wrap">
-              <h1 className="about-title mig-hero-title" {...rv(300)}>
-                Migrate NFD to BIC
-              </h1>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="section migrate">
-        <Container>
-          <SectionTop label="NFD → BIC" />
+          <h1 className="mig-hero-title" {...rv(300)}>
+            Migrate NFD to BIC
+          </h1>
           <div className="mig">
             {live && hook && bic ? (
               <MigrationTerminal hook={hook} bic={bic} />

@@ -24,8 +24,32 @@
 
 /* --- hero ---------------------------------------------------------------- */
 
+/* One line, always. The title shrinks to fit rather than wrapping: two lines
+   of heading is a whole band of the fold spent on words the visitor already
+   read in the tab. */
 .mig-hero-title {
-  max-width: 900px;
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(1.5rem, 6.2vw, 3.25rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+/* The page is a tool. Drop the editorial top padding the marketing sections
+   use so the terminal and the connect control are both above the fold. */
+.mig-section.section.migrate {
+  padding-top: 92px;
+  padding-bottom: 64px;
+}
+
+.mig-section .mig {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .mig-section.section.migrate {
+    padding-top: 64px;
+  }
 }
 
 .mig-hero-lede {

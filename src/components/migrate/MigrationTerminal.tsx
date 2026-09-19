@@ -356,6 +356,17 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
         </Panel>
       )}
 
+      {page === 'read-only' && !connected && (
+        <Panel>
+          <WalletPicker
+            wallets={wallet.wallets}
+            connecting={wallet.status === 'connecting' ? wallet.rdns : null}
+            error={wallet.error}
+            onPick={(rdns) => void wallet.connect(rdns)}
+          />
+        </Panel>
+      )}
+
       <Panel>
         <fieldset disabled={inFlight} className="mig-fieldset">
           <legend className="mig-legend">Direction</legend>
@@ -482,14 +493,7 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
             <button type="button" disabled className="mig-action">
               {page === 'checking' ? 'Reading the contracts…' : 'Not available'}
             </button>
-          ) : !connected ? (
-            <WalletPicker
-              wallets={wallet.wallets}
-              connecting={wallet.status === 'connecting' ? wallet.rdns : null}
-              error={wallet.error}
-              onPick={(rdns) => void wallet.connect(rdns)}
-            />
-          ) : (
+          ) : !connected ? null : (
             <>
               <div className="mig-connected">
                 <span className="mig-label">Connected</span>
