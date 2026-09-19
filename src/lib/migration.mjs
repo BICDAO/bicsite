@@ -72,8 +72,8 @@ export const NFD_ASSET_SLUG = 'feisty-doge-nft';
  * `readConfig` — so the only way the live site starts asking wallets to sign
  * is a code change somebody read.
  */
-export const KNOWN_HOOK = null;
-export const KNOWN_BIC = null;
+export const KNOWN_HOOK = '0x78d1A97a9239443070BE0353C68762CCCF64a888';
+export const KNOWN_BIC = '0xB1cDa04D7cD5584048ab48B42b629aEC34D3b562';
 
 export const CONTRACTS_REPO_URL = 'https://github.com/BICDAO/NFD-BIC-Migration';
 /** The repo was private on 2026-09-12. Flip when it is published. */
