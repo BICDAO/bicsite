@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { Address, Hex } from 'viem'
 import { publicClient } from '@/lib/ethClient'
-import { BIC_ABI, ERC20_ABI, MIGRATOR_ABI } from '@/lib/migrationAbi'
+import { BIC_ABI, ERC20_ABI, MIGRATOR_ABI, NFD_VAULT_ABI } from '@/lib/migrationAbi'
 import {
   NFD_ADDRESS,
   POLL_MS,
@@ -53,11 +53,18 @@ export type TokenReads = {
   totalSupply: bigint | null
 }
 
+export type NfdReads = TokenReads & {
+  /** The NFD vault's voting counter. Caps a voter's forward migration. */
+  votingTokens: bigint | null
+}
+
 export type AccountReads = {
   address: Address
   nfdBalance: bigint | null
   bicBalance: bigint | null
   nfdAllowance: bigint | null
+  /** NFD vault reserve-price vote. Non-zero = a voter, which caps forward migration. */
+  nfdUserPrice: bigint | null
   bicAllowance: bigint | null
 }
 
@@ -70,7 +77,7 @@ export type Reads = {
   stale: boolean
   hook: HookReads | null
   bic: (TokenReads & { treasury: Address | null }) | null
-  nfd: TokenReads | null
+  nfd: NfdReads | null
   account: AccountReads | null
   verification: Verification
 }
@@ -175,6 +182,8 @@ async function load(config: Config, account: Address | null, minBlock?: bigint):
           { address: NFD_ADDRESS, abi: ERC20_ABI, functionName: 'symbol' },
           { address: NFD_ADDRESS, abi: ERC20_ABI, functionName: 'decimals' },
           { address: NFD_ADDRESS, abi: ERC20_ABI, functionName: 'totalSupply' },
+          // The voter cap. See forwardCap() in lib/migration.mjs.
+          { address: NFD_ADDRESS, abi: NFD_VAULT_ABI, functionName: 'votingTokens' },
         ] as const,
       }),
       account
@@ -195,6 +204,14 @@ async function load(config: Config, account: Address | null, minBlock?: bigint):
                 abi: ERC20_ABI,
                 functionName: 'allowance',
                 args: [account, config.hook],
+              },
+              // Non-zero means this holder votes on the NFD vault's reserve
+              // price, which is what makes votingTokens bite. Almost nobody.
+              {
+                address: NFD_ADDRESS,
+                abi: NFD_VAULT_ABI,
+                functionName: 'userPrices',
+                args: [account],
               },
             ] as const,
           })
@@ -227,6 +244,7 @@ async function load(config: Config, account: Address | null, minBlock?: bigint):
       symbol: ok(base[11]),
       decimals: ok(base[12]),
       totalSupply: ok(base[13]),
+      votingTokens: ok(base[14]),
     }
     const accountReads: AccountReads | null =
       account && mine
@@ -236,6 +254,7 @@ async function load(config: Config, account: Address | null, minBlock?: bigint):
             bicBalance: ok(mine[1]),
             nfdAllowance: ok(mine[2]),
             bicAllowance: ok(mine[3]),
+            nfdUserPrice: ok(mine[4]),
           }
         : null
 

@@ -21,6 +21,7 @@ import {
   ZERO,
   capAdvice,
   classifyAmount,
+  forwardCap,
   describeFlow,
   flowReducer,
   formatAmount,
@@ -160,9 +161,16 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
   const allowance = mine ? (direction === 'forward' ? mine.nfdAllowance : mine.bicAllowance) : null
   const [revokePhase, setRevokePhase] = useState<RevokePhase>('idle')
   const revokeBusy = revokePhase === 'signing' || revokePhase === 'pending'
+  // Forward is capped by the hook's inventory AND, for an NFD voter, by the
+  // vault's votingTokens counter — see forwardCap() in lib/migration.mjs.
+  // Reverse draws on the escrow and the counter is not involved.
   const cap = reads.hook
     ? direction === 'forward'
-      ? reads.hook.inventoryB
+      ? forwardCap({
+          inventoryB: reads.hook.inventoryB,
+          votingTokens: reads.nfd?.votingTokens ?? null,
+          userPrice: mine?.nfdUserPrice ?? null,
+        })
       : reads.hook.escrowedA
     : null
   const paused = reads.hook?.paused ?? null

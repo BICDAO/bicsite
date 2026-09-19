@@ -402,6 +402,31 @@ export function planSteps({ allowance, amount }) {
   return needsApproval(allowance, amount) ? ['approve', 'send'] : ['send'];
 }
 
+/**
+ * The forward cap, which is not only the hook's inventory.
+ *
+ * A voter — `userPrice` non-zero — also spends the NFD vault's `votingTokens`
+ * counter when their NFD moves to the PoolManager, so their migration reverts
+ * above it however much inventory the hook holds. Capping here means the Max
+ * button offers a number that works and an over-typed amount lands on the
+ * `exceeds-cap` copy that already exists. **The word "voter" never has to
+ * reach the UI.**
+ *
+ * A non-voter is unaffected: `votingTokens` is not consulted at all, which is
+ * the common path.
+ *
+ * `null` for either read means "not read yet" and leaves the cap unknown
+ * rather than guessing it — except when the holder is known not to be a voter,
+ * where an unread counter is simply irrelevant.
+ */
+export function forwardCap({ inventoryB, votingTokens, userPrice }) {
+  if (typeof inventoryB !== 'bigint') return null;
+  if (userPrice === ZERO) return inventoryB;
+  if (typeof userPrice !== 'bigint') return null;
+  if (typeof votingTokens !== 'bigint') return null;
+  return votingTokens < inventoryB ? votingTokens : inventoryB;
+}
+
 /** The most this account can send right now: its balance or the contract's room. */
 export function maxAmount({ balance, cap }) {
   if (typeof balance !== 'bigint' || typeof cap !== 'bigint') return null;
@@ -902,4 +927,20 @@ export const ERC20_ABI_SIGNATURES = Object.freeze([
 export const BIC_ABI_SIGNATURES = Object.freeze([
   ...ERC20_ABI_SIGNATURES,
   'function treasury() view returns (address)',
+]);
+
+/**
+ * The NFD vault, only the two functions the voter cap needs.
+ *
+ * NFD is a Fractional TokenVault. Its transfer hook keeps a `votingTokens`
+ * counter and decrements it on every voter -> non-voter transfer, and the
+ * PoolManager is a non-voter — so a voter's forward migration is capped by
+ * that counter as well as by the hook's inventory. Exceeding it reverts
+ * `TransferFromFailed`, which reads like a missing approval and is not.
+ * See the contracts RUNBOOK §9. A holder is a voter when `userPrices` is
+ * non-zero, which is almost nobody.
+ */
+export const NFD_VAULT_ABI_SIGNATURES = Object.freeze([
+  'function votingTokens() view returns (uint256)',
+  'function userPrices(address holder) view returns (uint256)',
 ]);
