@@ -38,8 +38,6 @@ import {
   type Direction,
 } from '@/lib/migration'
 
-import { CapsStrip } from './CapsStrip'
-import { ContractsPanel } from './ContractsPanel'
 import { RevokeButton, type RevokePhase } from './RevokeButton'
 import { TxLog } from './TxLog'
 import { WalletPicker } from './WalletPicker'
@@ -324,8 +322,6 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
 
   return (
     <>
-      <CapsStrip reads={reads} now={now} page={page} stale={stale} />
-
       {page === 'read-only' && paused && (
         <Panel tone="notice" role="status" id={pausedId}>
           <p className="mig-p">
@@ -385,8 +381,16 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
                     className="mig-sr"
                     aria-describedby={d === 'forward' && paused ? pausedId : undefined}
                   />
-                  <label htmlFor={id} className="mig-seg-option">
-                    {d === 'forward' ? 'NFD → BIC' : 'BIC → NFD'}
+                  <label htmlFor={id} className={`mig-seg-option mig-dir-${d}`}>
+                    {d === 'forward' ? (
+                      <>
+                        NFD <span className="mig-arrow">→</span> BIC
+                      </>
+                    ) : (
+                      <>
+                        BIC <span className="mig-arrow">→</span> NFD
+                      </>
+                    )}
                   </label>
                 </span>
               )
@@ -447,6 +451,43 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
         <p id={helpId} className="mig-help">
           {help}
         </p>
+
+        {/* The two contract addresses, under the field where an amount was just
+            typed. Arrows match the direction control: the token going in, then
+            the token coming back. A visitor can paste either into a scanner
+            without taking this page's word for anything. */}
+        {config && (
+          <p className="mig-cas">
+            <span className="mig-ca">
+              <span className={direction === 'forward' ? 'mig-arrow-in' : 'mig-arrow-out'}>
+                {direction === 'forward' ? '→' : '←'}
+              </span>{' '}
+              NFD{' '}
+              <a
+                href={explorer.token(NFD_ADDRESS)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mig-ca-addr"
+              >
+                {NFD_ADDRESS}
+              </a>
+            </span>
+            <span className="mig-ca">
+              <span className={direction === 'forward' ? 'mig-arrow-out' : 'mig-arrow-in'}>
+                {direction === 'forward' ? '←' : '→'}
+              </span>{' '}
+              BIC{' '}
+              <a
+                href={explorer.token(config.bic)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mig-ca-addr"
+              >
+                {config.bic}
+              </a>
+            </span>
+          </p>
+        )}
         {classification === 'exceeds-cap' && cap !== null && cap > ZERO && !inFlight && (
           <button
             type="button"
@@ -583,12 +624,6 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
         onDismiss={() => dispatch({ type: 'DISMISS' })}
       />
 
-      <ContractsPanel
-        hook={config?.hook ?? hook}
-        bic={config?.bic ?? bic}
-        reads={reads}
-        now={now}
-      />
     </>
   )
 }
