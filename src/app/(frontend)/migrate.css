@@ -902,3 +902,23 @@
     border-bottom: 0;
   }
 }
+
+/* The WalletConnect pairing QR, inside the picker.
+   Rendered by uqr as an SVG from the pairing URI — no vendor modal, and no
+   image fetched from anywhere. White plate because a QR needs the quiet zone
+   and the light modules to scan reliably against a dark page. */
+.mig-wc-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--black-200);
+}
+
+.mig-wc-qr svg {
+  width: min(240px, 60vw);
+  height: auto;
+  background: #fff;
+  padding: 8px;
+}

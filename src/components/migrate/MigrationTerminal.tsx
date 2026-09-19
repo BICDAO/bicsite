@@ -41,6 +41,13 @@ import {
 import { RevokeButton, type RevokePhase } from './RevokeButton'
 import { TxLog } from './TxLog'
 import { WalletPicker } from './WalletPicker'
+import { WALLETCONNECT_RDNS } from '@/lib/eip6963'
+import {
+  clearPairingUri,
+  isAvailable as wcAvailable,
+  onPairingUri,
+  pair as wcPair,
+} from '@/lib/walletConnectPairing'
 import { continueFlow, startFlow, type FlowDeps } from './runFlow'
 import { Panel } from './ui'
 import { useMigrationReads, type Config, type Reads } from './useMigrationReads'
@@ -132,6 +139,22 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
   const [direction, setDirection] = useState<Direction>('forward')
   const [amountText, setAmountText] = useState('')
   const walletDialog = useRef<HTMLDialogElement>(null)
+  const [wcUri, setWcUri] = useState<string | null>(null)
+  const [wcPairing, setWcPairing] = useState(false)
+  useEffect(() => onPairingUri(setWcUri), [])
+
+  // WalletConnect has to establish a session before useWallet can ask it for
+  // accounts — UniversalProvider.request() throws without one. Pair first,
+  // then hand it to the same connect path every other wallet uses.
+  const connectWalletConnect = useCallback(async () => {
+    setWcPairing(true)
+    try {
+      if (await wcPair()) await wallet.connect(WALLETCONNECT_RDNS)
+    } finally {
+      setWcPairing(false)
+      clearPairingUri()
+    }
+  }, [wallet])
   const baseId = useId()
   const inputId = `${baseId}-amount`
   const helpId = `${baseId}-help`
@@ -381,10 +404,19 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
             connecting={wallet.status === 'connecting' ? wallet.rdns : null}
             error={wallet.error}
             onPick={(rdns) => void wallet.connect(rdns)}
+            walletConnect={{
+              available: wcAvailable(),
+              pairing: wcPairing,
+              uri: wcUri,
+              onPick: () => void connectWalletConnect(),
+            }}
           />
           <button
             type="button"
-            onClick={() => walletDialog.current?.close()}
+            onClick={() => {
+              clearPairingUri()
+              walletDialog.current?.close()
+            }}
             className="mig-btn-plain mig-dialog-close"
           >
             Cancel
@@ -584,10 +616,6 @@ export function MigrationTerminal({ hook, bic }: { hook: string; bic: string }) 
                 >
                   Forget this wallet
                 </button>
-                <span className="mig-note">
-                  This page forgets the wallet. The wallet&rsquo;s own permission for this site
-                  stays until you revoke it there.
-                </span>
               </div>
               {wrongChain && (
                 <p role="status" className="mig-alert">

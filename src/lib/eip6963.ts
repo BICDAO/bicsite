@@ -47,6 +47,11 @@ type AnnounceDetail = {
 /** The pseudo-rdns of the `window.ethereum` fallback. Never persisted: it
  * names whichever extension owns that global today, not a wallet. */
 export const LEGACY_RDNS = 'window.ethereum'
+
+/** The pseudo-rdns of the WalletConnect option. Not an announced wallet: this
+ * page registers it itself so a phone or a hardware wallet can pair by QR,
+ * which EIP-6963 cannot reach — it only sees extensions in this browser. */
+export const WALLETCONNECT_RDNS = 'walletconnect'
 const LEGACY_WAIT_MS = 300
 
 const EMPTY: readonly WalletInfo[] = Object.freeze([])
@@ -60,7 +65,10 @@ function publish() {
   // itself. Once a real wallet has, the guess leaves the picker — but stays
   // in the map, because a user may already be connected through it and its
   // provider must keep answering.
-  const announced = [...entries.values()].some((e) => !e.legacy)
+  // WalletConnect is registered by this page, not announced by an extension,
+  // so it must not count as evidence that a real wallet exists here — that
+  // would suppress the window.ethereum fallback an in-wallet browser needs.
+  const announced = [...entries.values()].some((e) => !e.legacy && e.rdns !== WALLETCONNECT_RDNS)
   snapshot = Object.freeze(
     [...entries.values()]
       .filter((e) => !announced || !e.legacy)
@@ -127,6 +135,29 @@ export function getSnapshot(): readonly WalletInfo[] {
 
 export function getServerSnapshot(): readonly WalletInfo[] {
   return EMPTY
+}
+
+/**
+ * Register a provider the page made rather than one a browser extension
+ * announced.
+ *
+ * The same first-wins rule applies, so this can never displace a wallet the
+ * user may already be connected through, and the provider object stays inside
+ * this module exactly as an announced one does.
+ */
+export function registerProvider(
+  info: { rdns: string; name: string; icon?: string | null },
+  provider: EIP1193Provider,
+): void {
+  if (entries.has(info.rdns)) return
+  entries.set(info.rdns, {
+    rdns: info.rdns,
+    name: info.name,
+    icon: typeof info.icon === 'string' && info.icon.startsWith('data:image/') ? info.icon : null,
+    legacy: false,
+    provider,
+  })
+  publish()
 }
 
 /** The provider behind an rdns, or null if it is not (or no longer) announced. */
